@@ -41,21 +41,26 @@ ul#square {
   list-style-type: square;
 }
 
-#increase {
+a {
+
+  text-decoration: none;
+  color: #1a51b7;
   transition: all 0.1s ease-in;
 }
-#increase:hover {
+a:hover {
+  color: #2a78c8;
   font-size:  1.03em;
   transition: font-size 0.2s;
 }
 
+
 #hoverlink {
   color: unset;
-  text-decoration: none;
+  text-decoration: none; !important
 }
 
 #hoverlink:hover {
-  text-decoration-line: underline;
+  text-decoration-line: underline; !important
 }
 
 
@@ -88,36 +93,18 @@ hr#titlehr {
   margin-left: 30px;
 }
 
-details
-{
-  transition: height 0.35s ease;
-  overflow: hidden;
+details summary {
+  cursor: pointer;
+  transition: margin 150ms ease-out;
 }
 
-details:not([open])
-{
-  height: 1.5em;
-}
-summary {
-    cursor: pointer;
-}
-
-details[open]
-{
-    height: 10.50em;
+details[open] summary {
+  margin-bottom: 10px;
 }
 
 
 li {
     margin-left: 30px;
-}
-a {
-
-  text-decoration: none;
-  color: #1a51b7;
-}
-a:hover {
-  color: #2a78c8;
 }
 
 .copyright {
