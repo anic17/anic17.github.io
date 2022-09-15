@@ -20,6 +20,7 @@ body {
 #headers {
   font-family: "Noto Sans";
   color: #458a8d;
+  line-height: 100%;
 }
 
 #layout {
@@ -29,11 +30,13 @@ body {
   min-height: 100vh;
   font-size: 12pt;
   line-height: 140%;
+
 }
+
 #layout_notimportant {
 
-  margin-left: 12vw;
-  margin-right: 12vw;
+  margin-left: 12%;
+  margin-right: 12%;
   margin-top: 8vh;
 }
 
@@ -47,7 +50,7 @@ a {
   color: #1a51b7;
   transition: all 0.1s ease-in;
 }
-a:hover {
+a.increase:hover {
   color: #2a78c8;
   font-size:  1.03em;
   transition: font-size 0.2s;
@@ -74,13 +77,13 @@ footer {
   
 
 hr {
-  margin-right: 50%;
+  width: 60%;
   height: 1px;
 }
 
 hr#titlehr {
 
-  margin-right: 0;
+  width: 100%;
   color: #858585;
   background-color: #858585;
   height: 3px;
@@ -88,9 +91,12 @@ hr#titlehr {
   border: none;
 }
 
-
 #list {
   margin-left: 30px;
+}
+
+.description {
+  text-justify: auto;
 }
 
 details summary {
@@ -101,7 +107,6 @@ details summary {
 details[open] summary {
   margin-bottom: 10px;
 }
-
 
 li {
     margin-left: 30px;
@@ -115,6 +120,43 @@ li {
 
 .icons {
   padding: 3px;
+}
+
+@keyframes hr_animate {
+  0%   {width: 60%;}
+  100% {width: calc(100% - (100vh)/100);}
+}
+
+@media (max-width: 600px) {
+  hr {
+    width: 100%;
+  }
+  
+  #layout {
+    line-height: 145%;
+  }
+}
+@media (min-width: 601px and max-width: 1535px)
+{
+  hr  {
+    width: 60%;
+    float: left;
+    transition: width 0.35s ease-out;
+  }  
+}
+
+/* Set a fixed size if the viewport is too big */
+@media (min-width: 1536px)
+{
+  #layout_notimportant {
+    margin-right: 185px;
+    margin-left: 185px;
+  }
+  hr {
+    width: 692px;
+    float: left;
+    transition: width 0.35s ease-out;
+  }
 }
 
 @media (prefers-color-scheme: dark)
