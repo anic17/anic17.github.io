@@ -1,7 +1,7 @@
 code {
-  font-family: "Inconsolata", monospace;
+  font-family: Inconsolata;
+  font-weight: 400;
   font-size: 11pt;
-  color: #292929;
   margin-top: 2px;
   margin-bottom: 2px;
 }
@@ -21,7 +21,16 @@ body {
   font-family: "Noto Sans";
   color: #458a8d;
   line-height: 100%;
+  font-weight: bold;
 }
+
+#sec_headers {
+  font-family: "Noto Sans";
+  color: #458a8d;
+  line-height: 100%;
+  font-weight: normal;
+}
+
 
 #layout {
   display: flex;
