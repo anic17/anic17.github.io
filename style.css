@@ -1,7 +1,22 @@
+html {
+  height: 100vh;
+}
+
+body {
+  width: auto;
+  height: auto;
+  min-height: 100vh;
+
+  margin: 0;
+  color: #1b3336;
+  background-color: #d9ecff;
+  font-family: "Zen Maru Gothic", "Microsoft JhengHei", Helvetica, Arial;
+}
+
 code {
-  font-family: Inconsolata;
+  font-family: Inconsolata, sans-serif;
   font-weight: 400;
-  font-size: 11pt;
+  font-size: 12pt;
   margin-top: 2px;
   margin-bottom: 2px;
 }
@@ -11,25 +26,19 @@ code {
   box-sizing: border-box
 }
 
-body {
-  margin: 0;
-  color: #1b3336;
-  background-color: #d9ecff;
-  font-family: "Zen Maru Gothic";
-  font-weight: normal;
-}
+
 #headers {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", "Open Sans", Roboto, Verdana;
   color: #458a8d;
   line-height: 100%;
   font-weight: 700;
 }
 
 #sec_headers {
-  font-family: "Noto Sans";
+  font-family: "Noto Sans", "Open Sans", Roboto, Verdana;
   color: #458a8d;
   line-height: 100%;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 
@@ -107,6 +116,7 @@ hr#titlehr {
 
 .description {
   text-justify: auto;
+  text-align: justify;
 }
 
 details summary {
@@ -119,41 +129,183 @@ details[open] summary {
 }
 
 li {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .copyright {
   font-size: 0.9em;
   text-align: center;
-
 }
 
 .icons {
   padding: 3px;
 }
 
+/* Begins the navigation bar */
+
+.navbar {
+  overflow: hidden;
+  background-color: #207777;
+  box-sizing: border-box;
+  height: auto;
+  margin-bottom: 70px;
+
+  width: 100%;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+
+.subnav a{
+  display: flex;
+  vertical-align: center;
+  place-content: center;
+  margin-bottom: auto;
+  margin-top: auto;
+
+  float: inherit;
+
+  width: 10vw;
+  font-size: inherit;
+  color: white;
+
+
+}
+
+
+.subnav .subnavhover, .subnav a {
+  width: 10vw;
+  font-size: inherit;  
+  border: none;
+  outline: none;
+  color: white !important;
+  background-color: inherit;
+  font-family: inherit;
+  text-align: center;
+  height: 70px;
+}
+
+
+
+button, button a {
+  width: 10vw;
+  font-size: inherit;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  text-align: center;
+  height: 70px;
+  vertical-align: top;
+}
+
+.cursorpointer {
+  cursor: pointer;
+}
+
+.subnav button.cursorpointer:hover {
+  background-color: #027789;
+  transition: background-color 0.2s ease-out;
+}
+
+.subnav div.subnav-content:hover + button.subnavhover {
+  background-color: #227b89;
+}
+
+
+.subnav-content a
+{
+  float: left;
+  color: white;
+  height: inherit !important;
+}
+
+
+
+
+@keyframes subnav-close {
+  from {opacity: 100%;}
+  to {opacity: 0%;}
+}
+
+@keyframes subnav-open {
+  from {opacity: 40%;}
+  to {opacity: 100%;}
+}
+
+
+.subnav-content {
+  position: absolute;
+  left: 0;
+  background-color: #34939a;
+  height: 70px;
+  display: none;
+}
+
+
+.subnavhover:hover + .subnav-content
+{
+  display: block;
+  opacity: 100%;
+  animation-name: subnav-open;
+  animation-duration: 0.2s;
+}
+
+.subnav-content:hover {
+  display: block;
+}
+
+
+/* Ends the navigation bar */
+
 @keyframes hr_animate {
   0%   {width: 60%;}
   100% {width: calc(100% - (100vh)/100);}
 }
 
-@media (max-width: 600px) {
+/* Viewport size adapters */
+
+@media (max-width: 800px) {
   hr {
     width: 100%;
   }
-  
   #layout {
     line-height: 145%;
   }
+  .navbar, .subnav {
+    display: none
+  }
 }
-@media (min-width: 601px and max-width: 1535px)
+
+@media (max-width: 900px)
 {
-  hr  {
-    width: 60%;
-    float: left;
-    transition: width 0.35s ease-out;
-  }  
+  .navbar a {
+    width: 90px;
+  }
+  .subnav .subnavbtn {
+    width: 90px;
+  }
+
 }
+
+@media (min-height: 300px and max-height: 400px)
+{
+  .subnav-content, button, button a, .subnav .subnavhover, .subnav a {
+    height: calc(100% * 0.15);
+  }
+}
+
+@media (max-height: 299px)
+{
+  .subnav-content, button, button a, .subnav .subnavhover, .subnav a {
+    height: 45px;
+  }
+}
+
 
 /* Set a fixed size if the viewport is too big */
 @media (min-width: 1536px)
@@ -167,6 +319,13 @@ li {
     float: left;
     transition: width 0.35s ease-out;
   }
+  .navbar a {
+    width: 153.6px;
+  }
+  .subnav .subnavhover {
+    width: 153.6px;
+  }
+  
 }
 
 @media (prefers-color-scheme: dark)
