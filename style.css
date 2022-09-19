@@ -148,7 +148,7 @@ li {
   background-color: #207777;
   box-sizing: border-box;
   height: auto;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 
   width: 100%;
 }
@@ -223,9 +223,6 @@ button, button a {
   color: white;
   height: inherit !important;
 }
-
-
-
 
 @keyframes subnav-close {
   from {opacity: 100%;}
