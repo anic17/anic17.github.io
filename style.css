@@ -87,10 +87,11 @@ a.increase:hover {
 
 
 footer {
+  font-size: 12pt;
   text-align: center;
   background-color: #43565e;
   color: #e9fcff;
-  padding:18px;
+  padding: 18px;
   width: 100%;
 }
   
@@ -212,7 +213,7 @@ button, button a {
   transition: background-color 0.2s ease-out;
 }
 
-.subnav div.subnav-content:hover + button.subnavhover {
+.subnav div.subnav-content:hover + div.subnavhover {
   background-color: #227b89;
 }
 
@@ -244,6 +245,7 @@ button, button a {
 }
 
 
+
 .subnavhover:hover + .subnav-content
 {
   display: block;
@@ -256,6 +258,10 @@ button, button a {
   display: block;
 }
 
+.subnavmenu:hover .subnavhover {
+    background-color: #027789;
+}
+
 
 /* Ends the navigation bar */
 
@@ -266,45 +272,55 @@ button, button a {
 
 /* Viewport size adapters */
 
-@media (max-width: 800px) {
+@media (max-width: 992px) {
   hr {
     width: 100%;
   }
   #layout {
     line-height: 145%;
   }
+  
+}
+
+@media (max-width: 992px)
+{
+  .navbar a {
+    width: 99.2px;
+  }
+  .subnav .subnavbtn {
+    width: 99.2px;
+  }
+  button {
+    width: 99.2px !important;
+  }
+
+}
+
+/* Make the navigation bar scalable */
+
+@media (max-width: 599px)
+{
   .navbar, .subnav {
     display: none
   }
 }
 
-@media (max-width: 900px)
-{
-  .navbar a {
-    width: 90px;
-  }
-  .subnav .subnavbtn {
-    width: 90px;
-  }
-
-}
-
-@media (min-height: 300px and max-height: 400px)
+@media (min-height: 300px) and (max-height: 466px)
 {
   .subnav-content, button, button a, .subnav .subnavhover, .subnav a {
-    height: calc(100% * 0.15);
+    height: 15vh;
   }
 }
 
 @media (max-height: 299px)
 {
   .subnav-content, button, button a, .subnav .subnavhover, .subnav a {
-    height: 45px;
+    height: calc(299px*0.15);
   }
 }
 
 
-/* Set a fixed size if the viewport is too big */
+/* Set a fixed size for some elements if the viewport is too big */
 @media (min-width: 1536px)
 {
   #layout_notimportant {
