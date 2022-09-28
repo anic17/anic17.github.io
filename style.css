@@ -28,14 +28,14 @@ code {
 
 
 #headers {
-  font-family: "Noto Sans", "Open Sans", Roboto, Verdana;
+  font-family: "Noto Sans", "Open Sans", Roboto, Verdana, Arial, serif;
   color: #458a8d;
   line-height: 100%;
   font-weight: 700;
 }
 
 #sec_headers {
-  font-family: "Noto Sans", "Open Sans", Roboto, Verdana;
+  font-family: "Noto Sans", "Open Sans", Roboto, Verdana, Arial, serif;
   color: #458a8d;
   line-height: 100%;
   font-weight: normal;
@@ -71,8 +71,8 @@ a {
 }
 a.increase:hover {
   color: #2a78c8;
-  font-size:  1.03em;
-  transition: font-size 0.2s;
+  font-size: 1.025em;
+  transition: all 0.2s;
 }
 
 
@@ -116,6 +116,7 @@ hr#titlehr {
 }
 
 .description {
+  margin-left: 10px;
   text-justify: auto;
   text-align: justify;
 }
@@ -197,7 +198,7 @@ button, button a {
   border: none;
   outline: none;
   color: white;
-  background-color: inherit;
+  background-color: #207777;
   font-family: inherit;
   text-align: center;
   height: 70px;
@@ -208,9 +209,15 @@ button, button a {
   cursor: pointer;
 }
 
-.subnav button.cursorpointer:hover {
+.subnav button.cursorpointer, .subnavmenu {
+  background-color: #207777;
+  transition: all 0.1s ease-out;
+}
+
+
+.subnav button.cursorpointer:hover, .subnavmenu:hover {
   background-color: #027789;
-  transition: background-color 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .subnav div.subnav-content:hover + div.subnavhover {
@@ -370,8 +377,4 @@ button, button a {
     color: #2e302e;
     background-color: #2e302e;
   }
-}
-
-.indent {
-  text-indent: 10px;
 }
