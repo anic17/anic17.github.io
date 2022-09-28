@@ -1,15 +1,26 @@
+.titletext {
+	font-size: 14pt;
+	font-weight: bold;
+}
+
 .badges {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px 0 5px;
 }
 
 .newtrodit_ul {
-	font-weight: bold;
+	font-weight: 500;
 
 }
 
 ul.padlist {
 	padding-left: 15px;
+}
+
+.imgcontainer {
+	height: 512px;
+	width: 962px;
+	border-box: none;
+	background-color: #d9ecff;
 }
 
 img.screenshot {
@@ -20,7 +31,7 @@ img.screenshot {
 
 @media (min-width: 1193px)
 {
-	img.screenshot {
+	img.screenshot, .imgcontainer {
 		height: 512px;
 		width: 962px;
 	}
@@ -28,9 +39,16 @@ img.screenshot {
 
 @media (max-width: 1192px)  /* 962 * 1.24 (image width * margin )*/
 {
-	img.screenshot {
+	img.screenshot, .imgcontainer {
 		height: calc((962*100%/1192)*(512/962));
 		width: calc(962*100%/1192);
 	}
 	
+}
+
+@media only screen and (prefers-color-scheme: dark)
+{
+	.imgcontainer {
+		background-color: #1a2023;
+	}
 }
