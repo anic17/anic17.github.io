@@ -48,6 +48,7 @@ code {
   justify-content: space-between;
   min-height: 100vh;
   font-size: 12pt;
+  font-weight: 500;
   line-height: 140%;
 
 }
@@ -232,42 +233,34 @@ button, button a {
   height: inherit !important;
 }
 
-@keyframes subnav-close {
-  from {opacity: 100%;}
-  to {opacity: 0%;}
-}
-
-@keyframes subnav-open {
-  from {opacity: 40%;}
-  to {opacity: 100%;}
-}
-
-
 .subnav-content {
   position: absolute;
   left: 0;
   background-color: #34939a;
   height: 70px;
-  display: none;
+  display: block;
 }
 
 
+.subnavhover + .subnav-content {
+  visibility: hidden;
+  opacity: 0%;
+  transition: all 0.15s;
+}
 
-.subnavhover:hover + .subnav-content
-{
-  display: block;
+.subnavhover:hover + .subnav-content, .subnav-content:hover {
+  visibility: visible;
   opacity: 100%;
-  animation-name: subnav-open;
-  animation-duration: 0.2s;
+  transition: opacity 0.3s;
+
 }
 
-.subnav-content:hover {
-  display: block;
-}
 
+/*
 .subnavmenu:hover .subnavhover {
-    background-color: #027789;
+  background-color: #027789;
 }
+*/
 
 
 /* Ends the navigation bar */
