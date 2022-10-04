@@ -115,7 +115,7 @@ hr#titlehr {
   border: none;
 }
 
-#list {
+#list, li {
   margin-left: 30px;
 }
 
@@ -132,10 +132,6 @@ details summary {
 
 details[open] summary {
   margin-bottom: 15px;
-}
-
-li {
-  margin-left: 30px;
 }
 
 .copyright {
@@ -239,7 +235,7 @@ button, button a {
 .subnav-content {
   position: absolute;
   left: 0;
-  background-color: #34939a;
+  background-color: #207777;
   height: 70px;
   display: block;
 }
@@ -292,17 +288,14 @@ button, button a {
   #layout {
     line-height: 145%;
   }
-
-}
-
-/* Make the navigation bar scalable */
-
-@media only screen and (max-width: 599px)
-{
-  .navbar, .subnav {
-    display: none
+  #list, li {
+    margin-left: calc(100vh * 30/992); 
+  }
+  .description {
+    margin-left: calc(100vh * 15/992); 
   }
 }
+
 
 /* Set a fixed size for some elements if the viewport is too big */
 @media only screen and (min-width: 1536px)
@@ -344,6 +337,7 @@ button, button a {
     margin-top: 51.84px;
   }
 }
+
 
 
 @media only screen and (prefers-color-scheme: dark)
