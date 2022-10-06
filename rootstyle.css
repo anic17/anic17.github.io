@@ -1,0 +1,54 @@
+.projbox {
+	visibility: hidden;
+	position: absolute;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+.batchlang:hover, .clang:hover, .webdevlang:hover {
+	cursor: pointer;
+}
+
+.batchlang:hover .projbox, .clang:hover .projbox, .webdevlang:hover .projbox {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 24px;
+	transition: all 0.5s ease;
+}
+
+.projbox {
+    display: table;
+    background-color: #d2e6fd; /* optional */
+	width: 200px;
+	height: 85px;
+    text-align: center; /* optional */
+   	border-radius: 5px;
+	color: #1b3336;
+	border: solid black 1px;
+	box-sizing: border-box;
+	-webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+    cursor: auto;
+    overflow: auto;
+    line-height: 110%;
+}
+
+.projbox li {
+	text-align: left;
+}
+
+.projboxlink {
+	text-decoration: underline;
+	color: inherit;
+}
+
+@media only screen and (prefers-color-scheme: dark)
+{
+	.projbox {
+    	background-color: #9bb0b0; /* optional */
+   		color: #1b3336;
+	}
+}

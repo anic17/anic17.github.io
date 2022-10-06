@@ -13,6 +13,7 @@
   />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="rootstyle.css"/>
   <!-- Google Analytics -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT5LM18KB9"></script>
@@ -72,7 +73,7 @@
     <div id="layout_notimportant">
 
      <header>
-        <strong><a href="https://github.com/anic17"><h1 id="headers">List of my biggest projects</h1></a></strong>
+        <strong><a href="https://github.com/anic17"><h1 class="headers">My biggest projects</h1></a></strong>
       </header>
 
       <br/><hr id="titlehr">
@@ -155,9 +156,26 @@
         <h2 id="sec_headers">
             <strong>Programming languages</strong>
         </h2><br>
-        <li>Batch (advanced)</li>
-        <li>C</li>
-        <li>Very simple HTML-CSS skills</li>
+        <div class="proglangcont">
+        <li class="batchlang" title="Projects using batch">
+          <button class="projbox">Projects using batch
+          <li><a class="projboxlink" href="https://anic17.github.io/Batch-Antivirus">Batch Antivirus</a></li>
+          <li><a class="projboxlink" href="https://github.com/anic17/Sandbox">Sandbox</a></li>
+          <li><a class="projboxlink" href="https://anic17.github.io/SWH">SWH</a></li>
+          <li><a class="projboxlink" href="https://github.com/anic17/Utilities">Batch utilities</a></li>
+          </button>Batch (advanced)
+        </li>
+
+        <li class="clang" title="Projects using C"><button class="projbox">Projects using C<br>
+          <li><a class="projboxlink" href="https://anic17.github.io/Newtrodit">Newtrodit</a></li>
+          <li><a class="projboxlink" href="https://anic17.github.io/DiskRead">DiskRead</a></li>
+          <li><a class="projboxlink" href="https://anic17.github.io/complex">Complex</a></li>
+        </button>C</li></li>
+        <li class="webdevlang" title="Projects using HTML and CSS"><button class="projbox">Projects using HTML and CSS<br>
+          <li><a class="projboxlink" href="https://anic17.github.io/homepage">Homepage</a></li>
+          <li><a class="projboxlink" href="https://anic17.github.io">This page</a></li>
+        </button>Simple HTML-CSS skills</li></li>
+      </div>
         <br>
         <br>
     </div>

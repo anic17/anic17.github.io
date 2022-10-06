@@ -5,8 +5,6 @@ html {
 body {
   width: auto;
   height: auto;
-  min-height: 100vh;
-
   margin: 0;
   color: #1b3336;
   background-color: #d9ecff;
@@ -23,7 +21,7 @@ code {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 
@@ -75,7 +73,7 @@ a {
 }
 a.increase:hover {
   color: #2a78c8;
-  font-size: 1.025em;
+  font-size: 1.015em;
   transition: all 0.2s;
 }
 
@@ -89,12 +87,11 @@ a.increase:hover {
   text-decoration-line: underline; !important
 }
 
-
 footer {
   font-size: 12pt;
   text-align: center;
   background-color: #43565e;
-  color: #e9fcff;
+  color: black;
   padding: 18px;
   width: 100%;
 }
@@ -151,7 +148,6 @@ details[open] summary {
   box-sizing: border-box;
   height: auto;
   margin-bottom: 50px;
-
   width: 100%;
 }
 
@@ -178,7 +174,7 @@ details[open] summary {
 }
 
 
-.subnav .subnavhover, .subnav a {
+.subnav button.subnavhover, .subnav a {
   width: 10vw;
   font-size: inherit;  
   border: none;
@@ -192,7 +188,7 @@ details[open] summary {
 
 
 
-button, button a {
+button.cursorpointer {
   width: 10vw;
   font-size: inherit;  
   border: none;
@@ -254,14 +250,6 @@ button, button a {
 
 }
 
-
-/*
-.subnavmenu:hover .subnavhover {
-  background-color: #027789;
-}
-*/
-
-
 /* Ends the navigation bar */
 
 @keyframes hr_animate {
@@ -273,14 +261,8 @@ button, button a {
 
 @media only screen and (max-width: 992px)
 {
-  .navbar a {
+  .navbar a, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer {
     width: 99.2px;
-  }
-  .subnav .subnavbtn {
-    width: 99.2px;
-  }
-  button {
-    width: 99.2px !important;
   }
   hr {
     width: 100%;
@@ -296,6 +278,15 @@ button, button a {
   }
 }
 
+@media only screen and (max-width: 600px)
+{
+  .navbar a, .subnav .subnavbtn, .subnavhover, button.cursorpointer, a, button.subnavhover {
+    width: 100vw;
+  }
+  button.subnavhover {
+    width: 100vw !important;
+  }
+}
 
 /* Set a fixed size for some elements if the viewport is too big */
 @media only screen and (min-width: 1536px)
@@ -312,21 +303,21 @@ button, button a {
   .navbar a {
     width: 153.6px;
   }
-  .subnav .subnavhover {
+  .subnav button.subnavhover {
     width: 153.6px;
   }
 }
 
 @media only screen and (min-height: 300px) and (max-height: 466px)
 {
-  .subnav-content, button, button a, .subnav .subnavhover, .subnav a {
+  .subnav-content, button, .subnav .subnavhover, .subnav a {
     height: 15vh;
   }
 }
 
 @media only screen and (max-height: 299px)
 {
-  .subnav-content, button, button a, .subnav .subnavhover, .subnav a {
+  .subnav-content, button, .subnav .subnavhover, .subnav a {
     height: calc(299px*0.15);
   }
 }
@@ -337,8 +328,6 @@ button, button a {
     margin-top: 51.84px;
   }
 }
-
-
 
 @media only screen and (prefers-color-scheme: dark)
 {
