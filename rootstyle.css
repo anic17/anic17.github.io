@@ -45,6 +45,10 @@
 	color: inherit;
 }
 
+.proglangcont {
+	max-width: 230px;
+}
+
 @media only screen and (prefers-color-scheme: dark)
 {
 	.projbox {
