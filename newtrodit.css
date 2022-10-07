@@ -17,8 +17,7 @@ ul.padlist {
 }
 
 .imgcontainer {
-	height: 512px;
-	width: 962px;
+	width: 100%;
 	border-box: none;
 	background-color: #d9ecff;
 }
@@ -37,18 +36,16 @@ img.screenshot {
 	}
 }
 
-@media (max-width: 1192px)  /* 962 * 1.24 (image width * margin )*/
+@media (max-width: 1192.88px)  /* 962 * 1.24 (image width * margin )*/
 {
-	img.screenshot, .imgcontainer {
-		height: calc((962*100%/1192)*(512/962));
-		width: calc(962*100%/1192);
+	img.screenshot {
+		width: 100%;
 	}
-	
 }
 
 @media only screen and (prefers-color-scheme: dark)
 {
 	.imgcontainer {
-		background-color: #1a2023;
+		background-color: #172125;
 	}
 }
