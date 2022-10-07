@@ -3,12 +3,15 @@
 <head>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Homepage for all big and useful projects made by anic17." />
+
+  <meta name="keywords" content="anic17, Newtrodit, Batch-Antivirus, Batch Antivirus, DiskRead, anic171, gfmaxgE">
+
   <link rel="icon" href="https://raw.githubusercontent.com/anic17/SWH/data/IconSWH.ico" type="image/x-icon"> 
   <title>anic17' projects</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&family=Zen+Maru+Gothic:wght@400;500;700&&family=Noto+Sans:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&family=Zen+Maru+Gothic:wght@400;500;700&&family=Raleway:wght@400;700&display=swap"
     rel="stylesheet"
   />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,40 +35,39 @@
         <div class="subnav">
           <!-- Buttons are formatted in this weird way due to browsers adding spaces between the buttons !-->
 
-          <a href="https://anic17.github.io"><button class="cursorpointer" title="Go to the homepage">
+          <a tabindex="1" href="https://anic17.github.io"><button class="cursorpointer" title="Go to the homepage">
               Home</button></a>
               
-              <span class="subnavmenu">
+              <span tabindex="2" class="subnavmenu">
                 <button class="subnavhover">
                   Projects <i class="fa fa-caret-down"></i>
                 </button>
               
 
               <div class="subnav-content">
-                <a href="https://anic17.github.io/Newtrodit">
+                <a tabindex="3" href="https://anic17.github.io/Newtrodit">
                 <button class="cursorpointer" title="Newtrodit, a console text editor">
-                Newtrodit</button></a><a href="https://anic17.github.io/Batch-Antivirus">
+                Newtrodit</button></a><a tabindex="4" href="https://anic17.github.io/Batch-Antivirus">
                 <button class="cursorpointer" title="Batch Antivirus, an antivirus written in batch">
-                Batch Antivirus</button></a><a href="https://anic17.github.io/SWH"><button class="cursorpointer" title="Scripting Windows Host, a scripting language for Windows">
-                SWH</button></a><a href="https://anic17.github.io/batch-plugins"><button class="cursorpointer" title="Collection of batch plugins">
-                Batch plugins</button></a><a href="https://anic17.github.io/DiskRead"><button class="cursorpointer" title="DiskRead, read raw chunks of a disk or a file">
-                DiskRead</button></a><a href="https://anic17.github.io/complex"><button class="cursorpointer" title="Complex number library written in and for C">
-                Complex</button></a><a href="https://anic17.github.io/homepage"><button class="cursorpointer" title="Simple, minimalist and intuitive browser homepage">
+                Batch Antivirus</button></a><a tabindex="5" href="https://anic17.github.io/SWH"><button class="cursorpointer" title="Scripting Windows Host, a scripting language for Windows">
+                SWH</button></a><a tabindex="6" href="https://anic17.github.io/batch-plugins"><button class="cursorpointer" title="Collection of batch plugins">
+                Batch plugins</button></a><a tabindex="7" href="https://anic17.github.io/DiskRead"><button class="cursorpointer" title="DiskRead, read raw chunks of a disk or a file">
+                DiskRead</button></a><a tabindex="8" href="https://anic17.github.io/complex"><button class="cursorpointer" title="Complex number library written in and for C">
+                Complex</button></a><a tabindex="9" href="https://anic17.github.io/homepage"><button class="cursorpointer" title="Simple, minimalist and intuitive browser homepage">
               Homepage</button></a>
               </div>
           </span>
             
           </div>
           <div class="subnav">
-          <a href="https://anic17.github.io/about" class="linknav"><button class="cursorpointer" title="The about me page">
+          <a tabindex="10" href="https://anic17.github.io/about" class="linknav"><button class="cursorpointer" title="The about me page">
               About me</button></a> 
-               <a href="https://github.com/anic17" class="linknav"><button class="cursorpointer" title="My GitHub profile">
+               <a tabindex="11" href="https://github.com/anic17" class="linknav"><button class="cursorpointer" title="My GitHub profile">
               GitHub</button></a> 
             </div>
         </div>
 
 
-  
   <!-- Begins the website layout !-->
 
   <div id="layout">
@@ -73,7 +75,7 @@
     <div id="layout_notimportant">
 
      <header>
-        <strong><a href="https://github.com/anic17"><h1 class="headers">My biggest projects</h1></a></strong>
+        <strong><a href="https://github.com/anic17"><h1 class="headers" title="My biggest projects">My projects</h1></a></strong>
       </header>
 
       <br/><hr id="titlehr">
@@ -82,7 +84,7 @@
         <li>
           <strong><a class="increase" href="https://anic17.github.io/Newtrodit"
             >Newtrodit, a console text editor.
-          </a></strong><br><div class="descripton">Currently the project I'm working on.</div>
+          </a></strong><br><div class="descripton">The project I'm currently working on.</div>
         </li>
         <br />
         <hr />
@@ -90,8 +92,8 @@
         <li>
        
           <strong><a class="increase" href="https://anic17.github.io/Batch-Antivirus"
-            >Antivirus written in batch, with real-time protection heuristical scanning.
-          </a></strong><br><div class="descripton">Gets updates every week.</div>
+            >Batch Antivirus, a powerful antivirus suite written in batch.
+          </a></strong><br><div class="descripton">Database gets updated every week.</div>
         </li>
           <br />
         <hr />
@@ -100,8 +102,8 @@
         <li>
         
           <strong><a class="increase" href="https://anic17.github.io/SWH"
-            >Scripting Windows Host is a small scripting language created for Microsoft Windows.
-          </a></strong><br><div class="descripton">Discontinued project, but at some day I might return to it as a plugin language for Newtrodit.</div>
+            >Scripting Windows Host, both a shell and a scripting language.
+          </a></strong><br><div class="descripton">The project is discontinued, but I might return to it as Newtrodit's language for plugins.</div>
         </li>
         <br>
         <hr>
@@ -110,13 +112,13 @@
         <li>
           <strong><a class="increase" href="https://github.com/anic17/batch-plugins">
             Collection of batch plugins.
-          </a></strong><br><div class="descripton">Here you'll find some useful plugins if you're using batch.</div>
+          </a></strong><br><div class="descripton">Useful external plugins to extend batch scripting functionality.</div>
         </li>
         <br>
         <hr>
         <br>
         <details>
-          <summary><strong>Other useful projects</strong>
+          <summary><strong>Other projects</strong>
             
           </summary>
           <span id="list">
@@ -126,7 +128,7 @@
                 <a class="increase" href="https://github.com/anic17/DiskRead">DiskRead</a>
               </strong>
             <br/>
-            <div class="descripton">Read raw chunks of a disk or a file, with the ability to export the read data.</div>
+            <div class="descripton">Read raw chunks of a disk or a file, with data exporting ability.</div>
             </li>
             <br/>
             <li>
@@ -158,7 +160,7 @@
         </h2><br>
         <div class="proglangcont">
         <li class="batchlang" title="Projects using batch">
-          <button class="projbox">Projects using batch
+          <button class="projbox"><span class="projboxtitle">Projects using batch</span>
           <li><a class="projboxlink" href="https://anic17.github.io/Batch-Antivirus">Batch Antivirus</a></li>
           <li><a class="projboxlink" href="https://github.com/anic17/Sandbox">Sandbox</a></li>
           <li><a class="projboxlink" href="https://anic17.github.io/SWH">SWH</a></li>
@@ -166,14 +168,14 @@
           </button>Batch (advanced)
         </li>
 
-        <li class="clang" title="Projects using C"><button class="projbox">Projects using C<br>
+        <li class="clang" title="Projects using C"><button class="projbox"><span class="projboxtitle">Projects using C</span><br>
           <li><a class="projboxlink" href="https://anic17.github.io/Newtrodit">Newtrodit</a></li>
           <li><a class="projboxlink" href="https://anic17.github.io/DiskRead">DiskRead</a></li>
           <li><a class="projboxlink" href="https://anic17.github.io/complex">Complex</a></li>
         </button>C</li></li>
-        <li class="webdevlang" title="Projects using HTML and CSS"><button class="projbox">Projects using HTML and CSS<br>
+        <li class="webdevlang" title="Projects using HTML and CSS"><button class="projbox"><span class="projboxtitle">Projects using HTML and CSS</span><br>
           <li><a class="projboxlink" href="https://anic17.github.io/homepage">Homepage</a></li>
-          <li><a class="projboxlink" href="https://anic17.github.io">This page</a></li>
+          <li><a class="projboxlink" href="https://github.com/anic17/anic17.github.io">This page</a></li>
         </button>Simple HTML-CSS skills</li></li>
       </div>
         <br>
