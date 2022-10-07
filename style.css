@@ -26,14 +26,14 @@ code {
 
 
 .headers {
-  font-family: "Noto Sans", "Open Sans", Roboto, Verdana, Arial, serif;
+  font-family: Raleway, "Open Sans", Roboto, Verdana, Arial, serif;
   color: #458a8d;
   line-height: 100%;
   font-weight: 700;
 }
 
 #sec_headers {
-  font-family: "Noto Sans", "Open Sans", Roboto, Verdana, Arial, serif;
+  font-family: Raleway, "Open Sans", Roboto, Verdana, Arial, serif;
   color: #458a8d;
   line-height: 100%;
   font-weight: normal;
@@ -68,15 +68,35 @@ ul#square {
 a {
 
   text-decoration: none;
+  /*
   color: #1a51b7;
   transition: all 0.1s ease-in;
-}
-a.increase:hover {
-  color: #2a78c8;
-  font-size: 1.015em;
-  transition: all 0.2s;
+  */
 }
 
+a.increase {
+    position: relative;
+  transition: color 0.3s cubic-bezier(.47,0,.2,.95);
+}
+
+a.increase:hover {
+  color: #2a78c8;
+  transition: color 0.3s cubic-bezier(.47,0,.2,.95);
+}
+a.increase:after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 0%;
+  border-bottom: 3px solid rgba(42, 120, 200, 0.4);
+  transition-timing-function: cubic-bezier(.47,0,.2,.95);
+  transition-property: width;
+  transition-duration: 0.3s;
+}
+a.increase:hover:after {
+  width: 100%;
+}
 
 #hoverlink {
   color: unset;
@@ -207,17 +227,17 @@ button.cursorpointer {
 
 .subnav button.cursorpointer, .subnavmenu {
   background-color: #207777;
-  transition: all 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
 }
 
 
-.subnav button.cursorpointer:hover, .subnavmenu:hover {
-  background-color: #027789;
-  transition: all 0.2s ease-out;
+.subnav button.cursorpointer:hover, .subnavmenu:hover, .subnav button.cursorpointer:focus, .subnavmenu:focus {
+  background-color: #207b89;
+  transition: background-color 0.2s ease-out;
 }
 
-.subnav div.subnav-content:hover + div.subnavhover {
-  background-color: #227b89;
+.subnav div.subnav-content:hover + div.subnavhover, .subnav div.subnav-content:focus + div.subnavhover{
+  background-color: #207b89;
 }
 
 
@@ -247,7 +267,14 @@ button.cursorpointer {
   visibility: visible;
   opacity: 100%;
   transition: opacity 0.3s;
+}
 
+/* Colored text selection */
+::selection {
+  background-color: #20504d;
+}
+::-moz-selection {
+  background-color: #20504d;
 }
 
 /* Ends the navigation bar */
@@ -280,11 +307,8 @@ button.cursorpointer {
 
 @media only screen and (max-width: 600px)
 {
-  .navbar a, .subnav .subnavbtn, .subnavhover, button.cursorpointer, a, button.subnavhover {
+  .navbar a, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer, a {
     width: 100vw;
-  }
-  button.subnavhover {
-    width: 100vw !important;
   }
 }
 
@@ -310,14 +334,14 @@ button.cursorpointer {
 
 @media only screen and (min-height: 300px) and (max-height: 466px)
 {
-  .subnav-content, button, .subnav .subnavhover, .subnav a {
+  button.cursorpointer, .subnav-content, .subnav button.subnavhover, .subnav a {
     height: 15vh;
   }
 }
 
 @media only screen and (max-height: 299px)
 {
-  .subnav-content, button, .subnav .subnavhover, .subnav a {
+  button.cursorpointer, .subnav-content, .subnav button.subnavhover, .subnav a {
     height: calc(299px*0.15);
   }
 }
@@ -346,7 +370,7 @@ button.cursorpointer {
   }
   body {
     color: #c0c9c9;
-    background-color: #1a2023;
+    background-color: #172125;
   }
   hr {
     color: #4a4a4a;

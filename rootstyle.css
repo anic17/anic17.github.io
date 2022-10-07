@@ -2,7 +2,7 @@
 	visibility: hidden;
 	position: absolute;
 	opacity: 0;
-	transition: all 0.5s ease;
+	transition: all 0.5s ease-out;
 }
 
 .batchlang:hover, .clang:hover, .webdevlang:hover {
@@ -34,7 +34,9 @@
     cursor: auto;
     overflow: auto;
     line-height: 110%;
+
 }
+
 
 .projbox li {
 	text-align: left;
@@ -46,7 +48,11 @@
 }
 
 .proglangcont {
-	max-width: 230px;
+	width: max-content;
+}
+
+.batchlang:hover, .clang:hover, .webdevlang:hover,  {
+	text-decoration: underline;
 }
 
 @media only screen and (prefers-color-scheme: dark)
