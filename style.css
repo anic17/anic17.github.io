@@ -136,6 +136,10 @@ hr#titlehr {
   margin-left: 30px;
 }
 
+li.code {
+  margin-bottom: 10px;
+}
+
 .description {
   margin-left: 15px;
   text-justify: auto;
@@ -271,10 +275,10 @@ button.cursorpointer {
 
 /* Colored text selection */
 ::selection {
-  background-color: #20504d;
+  background-color: #20c0ba;
 }
 ::-moz-selection {
-  background-color: #20504d;
+  background-color: #20c0ba;
 }
 
 /* Ends the navigation bar */
@@ -282,6 +286,11 @@ button.cursorpointer {
 @keyframes hr_animate {
   0%   {width: 60%;}
   100% {width: calc(100% - (100vh)/100);}
+}
+
+.titletext {
+  font-size: 14pt;
+  font-weight: bold;
 }
 
 /* Viewport size adapters */
@@ -379,5 +388,11 @@ button.cursorpointer {
   hr#titlehr {
     color: #2e302e;
     background-color: #2e302e;
+  }
+  ::selection {
+    background-color: #20504d;
+  }
+  ::-moz-selection {
+    background-color: #20504d;
   }
 }
