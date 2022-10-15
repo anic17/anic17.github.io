@@ -3,10 +3,6 @@
 	font-weight: bold;
 }
 
-.badges {
-	padding: 10px 0 5px;
-}
-
 .newtrodit_ul {
 	font-weight: 500;
 
@@ -17,7 +13,8 @@ ul.padlist {
 }
 
 .imgcontainer {
-	width: 100%;
+	height: 512px;
+	width: 962px;
 	border-box: none;
 	background-color: #d9ecff;
 }
@@ -36,16 +33,18 @@ img.screenshot {
 	}
 }
 
-@media (max-width: 1192.88px)  /* 962 * 1.24 (image width * margin )*/
+@media (max-width: 1192px)  /* 962 * 1.24 (image width * margin )*/
 {
-	img.screenshot {
-		width: 100%;
+	img.screenshot, .imgcontainer {
+		height: calc((962*100%/1192)*(512/962));
+		width: calc(962*100%/1192);
 	}
+	
 }
 
 @media only screen and (prefers-color-scheme: dark)
 {
 	.imgcontainer {
-		background-color: #172125;
+		background-color: #1a2023;
 	}
 }

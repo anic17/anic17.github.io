@@ -164,9 +164,49 @@ details[open] summary {
   padding: 3px;
 }
 
+.badges {
+	padding: 10px 0 5px;
+}
+
 /* Begins the navigation bar */
 
+
+
+/* Menu open for mobile hack */
+
+.navbar_menu {
+  position: absolute;
+  display: none;
+}
+
+.navbar_menu:hover {
+  cursor: pointer;
+}
+
+
+.navbar_menu_checkbox {
+  position: absolute;
+  opacity: 1;
+  width: 35px;
+}
+
+.navbar_menu_line {
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 4px;
+
+  width: 40px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: #aaaaad;
+  transition: background-color 0.2s ease;
+}
+
+/* Ends the hamburguer menu open */
+
 .navbar {
+  z-index: 200;
+  visibility: visible;
   overflow: hidden;
   background-color: #207777;
   box-sizing: border-box;
@@ -181,7 +221,7 @@ details[open] summary {
 }
 
 
-.subnav a{
+.subnav a {
   display: flex;
   vertical-align: center;
   place-content: center;
@@ -316,8 +356,15 @@ button.cursorpointer {
 
 @media only screen and (max-width: 600px)
 {
-  .navbar a, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer, a {
+  .navbar_menu {
+    display: block;
+  }
+  .navbar a, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer{
     width: 100vw;
+  }
+  .navbar {
+    visibility: hidden;
+    display: none;
   }
 }
 
@@ -367,7 +414,8 @@ button.cursorpointer {
   .headers {
     color: #52a6a9;
   }
-  footer {
+
+  footer, .navbar_menu_line {
     background-color: #8ba0a0;
     color: black;
   }
