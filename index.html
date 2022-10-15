@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&family=Zen+Maru+Gothic:wght@400;500;700&&family=Raleway:wght@400;700&display=swap"
     rel="stylesheet"
   />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="rootstyle.css"/>
   <!-- Google Analytics -->
@@ -30,7 +30,12 @@
 
 </head>
 <body>
-
+  
+    <div tabindex="0" onclick="showNavbar(event)" class="navbar_menu">
+      <div class="navbar_menu_line"></div>
+      <div class="navbar_menu_line"></div>
+      <div class="navbar_menu_line"></div>
+    </div>
     <div class="navbar">
         <div class="subnav">
           <!-- Buttons are formatted in this weird way due to browsers adding spaces between the buttons !-->
@@ -125,7 +130,7 @@
           <ul id="square">
             <li>
               <strong>
-                <a class="increase" href="https://github.com/anic17/DiskRead">DiskRead</a>
+                <a class="increase" href="https://anic17.github.io/DiskRead">DiskRead</a>
               </strong>
             <br/>
             <div class="descripton">Read raw chunks of a disk or a file, with data exporting ability.</div>
@@ -133,7 +138,7 @@
             <br/>
             <li>
               <strong>
-                <a class="increase" href="https://github.com/anic17/complex">Complex</a>
+                <a class="increase" href="https://anic17.github.io/complex">Complex</a>
               </strong>
               <br/>
               <div class="descripton">
@@ -193,5 +198,6 @@
     </span>
   </footer>
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
