@@ -2,63 +2,73 @@
 	visibility: hidden;
 	position: absolute;
 	opacity: 0;
-	transition: all 0.5s ease-out;
+	transition: all 0.4s ease-out;
 }
 
-.batchlang:hover, .clang:hover, .webdevlang:hover {
+.batchlang:hover,
+.clang:hover,
+.webdevlang:hover {
 	cursor: pointer;
 }
 
-.batchlang:hover .projbox, .clang:hover .projbox, .webdevlang:hover .projbox {
+.batchlang:hover .projbox,
+.clang:hover .projbox,
+.webdevlang:hover .projbox {
 	visibility: visible;
 	opacity: 1;
 	margin-top: 24px;
-	transition: all 0.5s ease;
+	transition: all 0.4s ease;
 }
 
 .projbox {
-    display: table;
-    background-color: #d2e6fd; /* optional */
+	display: table;
+	background-color:#338d89;
 	width: 200px;
 	height: 85px;
-    text-align: center; /* optional */
-   	border-radius: 5px;
-	color: #1b3336;
-	border: solid black 1px;
+	text-align: center;
+	border-radius: 5px;
+	color: #1b232a;
+	border: solid #207777 1px;
 	box-sizing: border-box;
 	-webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    -o-user-select: text;
-    user-select: text;
-    cursor: auto;
-    overflow: auto;
-    line-height: 110%;
-
+	-moz-user-select: text;
+	-ms-user-select: text;
+	-o-user-select: text;
+	user-select: text;
+	cursor: auto;
+	overflow: auto;
+	line-height: 110%;
 }
-
 
 .projbox li {
 	text-align: left;
 }
 
 .projboxlink {
-	text-decoration: underline;
-	color: inherit;
+	color: #203045;
+}
+
+.projboxlink:hover {
+	color: #30547a !important;
 }
 
 .proglangcont {
 	width: max-content;
 }
 
-.batchlang:hover, .clang:hover, .webdevlang:hover,  {
+.batchlang:hover,
+.clang:hover,
+.webdevlang:hover {
 	text-decoration: underline;
 }
 
-@media only screen and (prefers-color-scheme: dark)
-{
+.projboxtitle {
+	font-weight: bold;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
 	.projbox {
-    	background-color: #9bb0b0; /* optional */
-   		color: #1b3336;
+		background-color:#3f8d89;
+		color: #1b1420;
 	}
 }
