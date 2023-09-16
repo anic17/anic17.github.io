@@ -543,13 +543,13 @@ button.cursorpointer {
   }
 
   hr {
-    color: #4a4a4a;
-    background-color: #4a4a4a;
+    color: #3a4a4a;
+    background-color: #3a4a4a;
   }
 
   hr#titlehr {
-    color: #2e302e;
-    background-color: #2e302e;
+    color: #27302e;
+    background-color: #27302e;
   }
 
   ::selection {
