@@ -8,13 +8,32 @@ html {
 }
 
 @font-face {
-	font-family: "Zen Maru Gothic";
-	src: url("fonts/ZenMaruGothic-Medium.ttf");
+  font-family: "Zen Maru Gothic";
+  src: url("fonts/ZenMaruGothic-Medium.ttf");
 }
 
 @font-face {
   font-family: "Raleway";
   src: url("fonts/Raleway-SemiBold.ttf");
+}
+
+/* Font Awesome font */
+@font-face {
+	font-family: "FontAwesome";
+	src: url("fonts/fontawesome-webfont.ttf") format("truetype");
+}
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 "FontAwesome";
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.fa-caret-down:before {
+	content: "\f0d7"
 }
 
 
@@ -34,6 +53,7 @@ code {
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -41,12 +61,14 @@ code {
 }
 
 
-.headers, #sec_headers {
+.headers,
+#sec_headers {
   font-family: "Raleway", "Open Sans", "Roboto", Verdana, Arial, serif;
   line-height: 100%;
   color: #458a8d;
 
 }
+
 .headers {
   font-weight: 700;
 }
@@ -64,7 +86,8 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(100vh - var(--navbar-height) - var(--navbar-margin)); /* 120px comes from the navbar: 70px height + 50px margin */
+  min-height: calc(100vh - var(--navbar-height) - var(--navbar-margin));
+  /* 120px comes from the navbar: 70px height + 50px margin */
   font-size: 12pt;
   font-weight: 500;
   line-height: 140%;
@@ -93,13 +116,14 @@ a {
 
 a.increase {
   position: relative;
-  transition: color 0.3s cubic-bezier(.47,0,.2,.95);
+  transition: color 0.3s cubic-bezier(.47, 0, .2, .95);
 }
 
 a.increase:hover {
   color: #2a78c8;
-  transition: color 0.3s cubic-bezier(.47,0,.2,.95);
+  transition: color 0.3s cubic-bezier(.47, 0, .2, .95);
 }
+
 a.increase:after {
   content: '';
   position: absolute;
@@ -107,7 +131,7 @@ a.increase:after {
   left: 0;
   width: 0%;
   border-bottom: 3px solid rgba(42, 120, 200, 0.4);
-  transition-timing-function: cubic-bezier(.47,0,.2,.95);
+  transition-timing-function: cubic-bezier(.47, 0, .2, .95);
   transition-property: width;
   transition-duration: 0.3s;
 }
@@ -127,6 +151,7 @@ a.increase:hover:after {
 }
 
 footer {
+  margin-top: 30px;
   font-size: 12pt;
   text-align: center;
   background-color: #43565e;
@@ -134,7 +159,7 @@ footer {
   padding: 18px;
   width: 100%;
 }
-  
+
 
 hr {
   width: 60%;
@@ -151,7 +176,8 @@ hr#titlehr {
   border: none;
 }
 
-#list, li {
+#list,
+li {
   margin-left: 30px;
 }
 
@@ -181,10 +207,17 @@ details[open] summary {
 
 .icons {
   padding: 3px;
+  filter: invert(calc(10/255));
+  transition: filter 0.1s ease;
+}
+
+.icons:hover {
+  filter: invert(calc(50/255));
+  transition: filter 0.2s ease;
 }
 
 .badges {
-	padding: 10px 0 5px;
+  padding: 10px 0 5px;
 }
 
 /* Begins the navigation bar */
@@ -199,12 +232,16 @@ details[open] summary {
   display: none;
 }
 
-.navbar_menu .navbar_menu_line, .navbar_cross .line1, .navbar_cross .line2 {
+.navbar_menu .navbar_menu_line,
+.navbar_cross .line1,
+.navbar_cross .line2 {
   background-color: #52a6a9;
   transition: background-color 0.2s ease;
 }
 
-.navbar_menu:hover .navbar_menu_line, .navbar_menu:hover .line1, .navbar_menu:hover .line2 {
+.navbar_menu:hover .navbar_menu_line,
+.navbar_menu:hover .line1,
+.navbar_menu:hover .line2 {
   background-color: #70bbb2;
   transition: background-color 0.1s ease-out;
 }
@@ -212,18 +249,20 @@ details[open] summary {
 
 
 .line1 {
-	margin-bottom: 20px;
-	transform: translateY(12px) rotate(45deg);
+  margin-bottom: 20px;
+  transform: translateY(12px) rotate(45deg);
 }
 
 .line2 {
-	transform: translateY(-12px) rotate(-45deg);
+  transform: translateY(-12px) rotate(-45deg);
 }
-.line1, .line2 {
-	width: 35px;
-	height: 4px;
-	background-color: #aaaaad;
-	transition: background-color 0.2s ease;
+
+.line1,
+.line2 {
+  width: 35px;
+  height: 4px;
+  background-color: #aaaaad;
+  transition: background-color 0.2s ease;
 }
 
 
@@ -246,7 +285,7 @@ details[open] summary {
 
 /* Ends the hamburguer menu open */
 
-#navbar{
+#navbar {
   z-index: 200;
   visibility: visible;
   overflow: hidden;
@@ -280,9 +319,10 @@ details[open] summary {
 }
 
 
-.subnav button.subnavhover, .subnav a {
+.subnav button.subnavhover,
+.subnav a {
   width: 10vw;
-  font-size: inherit;  
+  font-size: inherit;
   border: none;
   outline: none;
   color: white !important;
@@ -296,7 +336,7 @@ details[open] summary {
 
 button.cursorpointer {
   width: 10vw;
-  font-size: inherit;  
+  font-size: inherit;
   border: none;
   outline: none;
   color: white;
@@ -311,19 +351,22 @@ button.cursorpointer {
   cursor: pointer;
 }
 
-.subnav button.cursorpointer, .subnavmenus {
+.subnav button.cursorpointer,
+.subnavmenus {
   background-color: #207777;
   transition: background-color 0.1s ease-out;
 }
 
 
-.subnav button.cursorpointer:hover, .subnavmenu:hover, .subnav button.cursorpointer:focus, .subnavmenu:focus {
+.subnav button.cursorpointer:hover,
+.subnavmenu:hover,
+.subnav button.cursorpointer:focus,
+.subnavmenu:focus {
   background-color: #207b89;
   transition: background-color 0.2s ease-out;
 }
 
-.subnav-content a
-{
+.subnav-content a {
   float: left;
   color: white;
   height: inherit !important;
@@ -338,13 +381,14 @@ button.cursorpointer {
 }
 
 
-.subnavhover + .subnav-content {
+.subnavhover+.subnav-content {
   visibility: hidden;
   opacity: 0%;
   transition: all 0.15s;
 }
 
-.subnavhover:hover + .subnav-content, .subnav-content:hover {
+.subnavhover:hover+.subnav-content,
+.subnav-content:hover {
   visibility: visible;
   opacity: 100%;
   transition: opacity 0.3s;
@@ -354,6 +398,7 @@ button.cursorpointer {
 ::selection {
   background-color: #20c0ba;
 }
+
 ::-moz-selection {
   background-color: #20c0ba;
 }
@@ -361,8 +406,13 @@ button.cursorpointer {
 /* Ends the navigation bar */
 
 @keyframes hr_animate {
-  0%   {width: 60%;}
-  100% {width: calc(100% - (100vh)/100);}
+  0% {
+    width: 60%;
+  }
+
+  100% {
+    width: calc(100% - (100vh)/100);
+  }
 }
 
 .titletext {
@@ -372,111 +422,140 @@ button.cursorpointer {
 
 /* Viewport size adapters */
 
-@media only screen and (max-width: 992px)
-{
-  #navbara, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer {
+@media only screen and (max-width: 992px) {
+
+  #navbara,
+  .subnav .subnavbtn,
+  .subnav button.subnavhover,
+  button.cursorpointer {
     width: 99.2px;
   }
+
   hr {
     width: 100%;
   }
+
   #layout {
     line-height: 145%;
   }
-  #list, li {
-    margin-left: calc(100vh * 30/992); 
+
+  #list,
+  li {
+    margin-left: calc(100vh * 30/992);
   }
+
   .description {
-    margin-left: calc(100vh * 15/992); 
+    margin-left: calc(100vh * 15/992);
   }
 }
 
-@media only screen and (max-width: 600px)
-{
+@media only screen and (max-width: 600px) {
   .navbar_menu {
     display: block;
   }
-  #navbara, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer{
+
+  #navbara,
+  .subnav .subnavbtn,
+  .subnav button.subnavhover,
+  button.cursorpointer {
     width: 100vw;
   }
-  #navbar{
+
+  #navbar {
     visibility: hidden;
     display: none;
   }
 }
 
 /* Set a fixed size for some elements if the viewport is too big */
-@media only screen and (min-width: 1536px)
-{
+@media only screen and (min-width: 1536px) {
   #layout_notimportant {
     margin-right: 185px;
     margin-left: 185px;
   }
+
   hr {
     width: 692px;
     float: left;
     transition: width 0.35s ease-out;
   }
+
   #navbara {
     width: 153.6px;
   }
+
   .subnav button.subnavhover {
     width: 153.6px;
   }
 }
 
-@media only screen and (min-height: 300px) and (max-height: 466px)
-{
-  button.cursorpointer, .subnav-content, .subnav button.subnavhover, .subnav a {
+@media only screen and (min-height: 300px) and (max-height: 466px) {
+
+  button.cursorpointer,
+  .subnav-content,
+  .subnav button.subnavhover,
+  .subnav a {
     height: 15vh;
   }
 }
 
-@media only screen and (max-height: 299px)
-{
-  button.cursorpointer, .subnav-content, .subnav button.subnavhover, .subnav a {
+@media only screen and (max-height: 299px) {
+
+  button.cursorpointer,
+  .subnav-content,
+  .subnav button.subnavhover,
+  .subnav a {
     height: calc(299px*0.15);
   }
 }
 
-@media only screen and (min-height: 864px)
-{
+@media only screen and (min-height: 864px) {
   #layout_notimportant {
     margin-top: 51.84px;
   }
 }
 
-@media only screen and (prefers-color-scheme: dark)
-{
+@media only screen and (prefers-color-scheme: dark) {
   .headers {
     color: #52a6a9;
   }
 
-  footer, .navbar_menu_line, .navbar_menu .navbar_menu_line, .line1, .line2 {
-    background-color: #82A0A0;
+  footer,
+  .navbar_menu_line,
+  .navbar_menu .navbar_menu_line,
+  .line1,
+  .line2 {
+    background-color: #729090;
     color: black;
   }
+
   a {
     color: #5a9fbe;
   }
+
   a:hover {
     color: #4a68c0;
   }
+
   body {
     color: #c0c9c9;
     background-color: #172126;
   }
+
   hr {
     color: #4a4a4a;
     background-color: #4a4a4a;
   }
+
   hr#titlehr {
     color: #2e302e;
     background-color: #2e302e;
   }
+
   ::selection {
     background-color: #20504d;
   }
+
   ::-moz-selection {
     background-color: #20504d;
   }
