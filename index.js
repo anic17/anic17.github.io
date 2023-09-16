@@ -27,30 +27,26 @@ function showNavbar() {
   );
 }
 
-function loadFile(filename, divname) {
-  let file = new XMLHttpRequest();
-  file.open("GET", `${filename}.html`);
-  var changeval = document.getElementById(divname);
-  if(changeval == null)
-  {
-	changeval.innerHTML = `Cannot find '${divname}' div`;
-  }
-  file.onreadystatechange = function () {
-    changeval.innerHTML = file.responseText;
-  };
-  file.onerror = function () {
-	changeval.innerHTML = `Failed to retrieve file contents from '${filename}.html'`;
-	console.log("Error : " + file.responseText);
-
-  };
-  file.send();
+function loadContent(containerId, contentFile) {
+  fetch(contentFile)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById(containerId).innerHTML = data;
+    })
+    .catch(error => console.error("Error loading content: ", error));
 }
-
 function loadWebsite() {
-  let divnames = ["navbar", "footer", "copyright"];
-  for (let div of divnames) {
-    loadFile(div, div);
+  const names = {
+    navbar: "/navbar.html",
+    footer: "/footer.html",
+    copyright: "/copyright.html",
+  };
+  for (const [div, filename] of Object.entries(names)) {
+    loadContent(div, filename);
   }
+
+  //let r = document.querySelector(':root').style.setProperty('--navbar-height', '70px');
+
 }
 
 window.onload = loadWebsite();
