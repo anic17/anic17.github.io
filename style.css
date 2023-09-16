@@ -1,6 +1,22 @@
+:root {
+  --navbar-margin: 70px;
+  --navbar-height: 70px;
+}
+
 html {
   height: 100vh;
 }
+
+@font-face {
+	font-family: "Zen Maru Gothic";
+	src: url("fonts/ZenMaruGothic-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("fonts/Raleway-SemiBold.ttf");
+}
+
 
 body {
   width: auto;
@@ -12,7 +28,7 @@ body {
 }
 
 code {
-  font-family: Inconsolata, sans-serif;
+  font-family: "Inconsolata", "Consolas", monospace;
   font-weight: 400;
   font-size: 12pt;
   margin-top: 2px;
@@ -25,17 +41,18 @@ code {
 }
 
 
-.headers {
-  font-family: Raleway, "Open Sans", Roboto, Verdana, Arial, serif;
-  color: #458a8d;
+.headers, #sec_headers {
+  font-family: "Raleway", "Open Sans", "Roboto", Verdana, Arial, serif;
   line-height: 100%;
+  color: #458a8d;
+
+}
+.headers {
   font-weight: 700;
 }
 
 #sec_headers {
-  font-family: Raleway, "Open Sans", Roboto, Verdana, Arial, serif;
-  color: #458a8d;
-  line-height: 100%;
+  font-family: "Raleway", "Open Sans", "Roboto", Verdana, Arial, serif;
   font-weight: normal;
   margin-left: 10px;
   padding-top: 5px;
@@ -47,7 +64,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(100vh - 120px); /* 120px comes from the navbar: 70px height + 50px margin */
+  min-height: calc(100vh - var(--navbar-height) - var(--navbar-margin)); /* 120px comes from the navbar: 70px height + 50px margin */
   font-size: 12pt;
   font-weight: 500;
   line-height: 140%;
@@ -75,7 +92,7 @@ a {
 }
 
 a.increase {
-    position: relative;
+  position: relative;
   transition: color 0.3s cubic-bezier(.47,0,.2,.95);
 }
 
@@ -86,7 +103,7 @@ a.increase:hover {
 a.increase:after {
   content: '';
   position: absolute;
-  bottom: 1px;
+  bottom: 0;
   left: 0;
   width: 0%;
   border-bottom: 3px solid rgba(42, 120, 200, 0.4);
@@ -94,17 +111,19 @@ a.increase:after {
   transition-property: width;
   transition-duration: 0.3s;
 }
+
+
 a.increase:hover:after {
   width: 100%;
 }
 
 #hoverlink {
   color: unset;
-  text-decoration: none; !important
+  text-decoration: none;
 }
 
 #hoverlink:hover {
-  text-decoration-line: underline; !important
+  text-decoration-line: underline;
 }
 
 footer {
@@ -155,7 +174,7 @@ details[open] summary {
   margin-bottom: 15px;
 }
 
-.copyright {
+#copyright {
   font-size: 0.9em;
   text-align: center;
 }
@@ -170,24 +189,48 @@ details[open] summary {
 
 /* Begins the navigation bar */
 
-
-
-/* Menu open for mobile hack */
-
 .navbar_menu {
+  position: absolute;
+  display: block;
+}
+
+.navbar_cross {
   position: absolute;
   display: none;
 }
 
-.navbar_menu:hover {
-  cursor: pointer;
+.navbar_menu .navbar_menu_line, .navbar_cross .line1, .navbar_cross .line2 {
+  background-color: #52a6a9;
+  transition: background-color 0.2s ease;
+}
+
+.navbar_menu:hover .navbar_menu_line, .navbar_menu:hover .line1, .navbar_menu:hover .line2 {
+  background-color: #70bbb2;
+  transition: background-color 0.1s ease-out;
 }
 
 
-.navbar_menu_checkbox {
-  position: absolute;
-  opacity: 1;
-  width: 35px;
+
+.line1 {
+	margin-bottom: 20px;
+	transform: translateY(12px) rotate(45deg);
+}
+
+.line2 {
+	transform: translateY(-12px) rotate(-45deg);
+}
+.line1, .line2 {
+	width: 35px;
+	height: 4px;
+	background-color: #aaaaad;
+	transition: background-color 0.2s ease;
+}
+
+
+
+
+.navbar_menu:hover {
+  cursor: pointer;
 }
 
 .navbar_menu_line {
@@ -198,20 +241,19 @@ details[open] summary {
   width: 40px;
   height: 6px;
   border-radius: 5px;
-  background-color: #aaaaad;
-  transition: background-color 0.2s ease;
+
 }
 
 /* Ends the hamburguer menu open */
 
-.navbar {
+#navbar{
   z-index: 200;
   visibility: visible;
   overflow: hidden;
   background-color: #207777;
   box-sizing: border-box;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: var(--navbar-height);
   width: 100%;
 }
 
@@ -247,7 +289,7 @@ details[open] summary {
   background-color: inherit;
   font-family: inherit;
   text-align: center;
-  height: 70px;
+  height: var(--navbar-height);
 }
 
 
@@ -261,7 +303,7 @@ button.cursorpointer {
   background-color: #207777;
   font-family: inherit;
   text-align: center;
-  height: 70px;
+  height: var(--navbar-height);
   vertical-align: top;
 }
 
@@ -269,7 +311,7 @@ button.cursorpointer {
   cursor: pointer;
 }
 
-.subnav button.cursorpointer, .subnavmenu {
+.subnav button.cursorpointer, .subnavmenus {
   background-color: #207777;
   transition: background-color 0.1s ease-out;
 }
@@ -279,11 +321,6 @@ button.cursorpointer {
   background-color: #207b89;
   transition: background-color 0.2s ease-out;
 }
-
-.subnav div.subnav-content:hover + div.subnavhover, .subnav div.subnav-content:focus + div.subnavhover{
-  background-color: #207b89;
-}
-
 
 .subnav-content a
 {
@@ -296,7 +333,7 @@ button.cursorpointer {
   position: absolute;
   left: 0;
   background-color: #207777;
-  height: 70px;
+  height: var(--navbar-height);
   display: block;
 }
 
@@ -337,7 +374,7 @@ button.cursorpointer {
 
 @media only screen and (max-width: 992px)
 {
-  .navbar a, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer {
+  #navbara, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer {
     width: 99.2px;
   }
   hr {
@@ -359,10 +396,10 @@ button.cursorpointer {
   .navbar_menu {
     display: block;
   }
-  .navbar a, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer{
+  #navbara, .subnav .subnavbtn, .subnav button.subnavhover, button.cursorpointer{
     width: 100vw;
   }
-  .navbar {
+  #navbar{
     visibility: hidden;
     display: none;
   }
@@ -380,7 +417,7 @@ button.cursorpointer {
     float: left;
     transition: width 0.35s ease-out;
   }
-  .navbar a {
+  #navbara {
     width: 153.6px;
   }
   .subnav button.subnavhover {
@@ -415,8 +452,8 @@ button.cursorpointer {
     color: #52a6a9;
   }
 
-  footer, .navbar_menu_line {
-    background-color: #8ba0a0;
+  footer, .navbar_menu_line, .navbar_menu .navbar_menu_line, .line1, .line2 {
+    background-color: #82A0A0;
     color: black;
   }
   a {
@@ -427,7 +464,7 @@ button.cursorpointer {
   }
   body {
     color: #c0c9c9;
-    background-color: #172125;
+    background-color: #172126;
   }
   hr {
     color: #4a4a4a;
