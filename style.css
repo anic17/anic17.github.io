@@ -19,21 +19,21 @@ html {
 
 /* Font Awesome font */
 @font-face {
-	font-family: "FontAwesome";
-	src: url("fonts/fontawesome-webfont.ttf") format("truetype");
+  font-family: "FontAwesome";
+  src: url("fonts/fontawesome-webfont.ttf") format("truetype");
 }
 
 .fa {
-	display: inline-block;
-	font: normal normal normal 14px/1 "FontAwesome";
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale
+  display: inline-block;
+  font: normal normal normal 14px/1 "FontAwesome";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
 }
 
 .fa-caret-down:before {
-	content: "\f0d7"
+  content: "\f0d7"
 }
 
 
@@ -69,9 +69,7 @@ code {
 
 }
 
-.headers {
-  font-weight: 700;
-}
+
 
 #sec_headers {
   font-family: "Raleway", "Open Sans", "Roboto", Verdana, Arial, serif;
@@ -95,7 +93,6 @@ code {
 }
 
 #layout_notimportant {
-
   margin-left: 12vw;
   margin-right: 12vw;
   margin-top: 6vh;
@@ -105,16 +102,33 @@ ul#square {
   list-style-type: square;
 }
 
-a {
-
+a, a:active {
   text-decoration: none;
-  /*
-  color: #1a51b7;
-  transition: all 0.1s ease-in;
-  */
+  color: inherit;
+}
+
+.headers {
+  font-size: 100%;
+  transition-property: font-size;
+  transition-timing-function: cubic-bezier(.47, 0, .2, .95);
+  transition-duration: 0.3s;
+}
+
+
+.headers {
+  font-size: 120%;
+}
+
+a.headers:hover {
+
+  font-size: 121%;
+  transition-property: font-size;
+  transition-timing-function: cubic-bezier(.47, 0, .2, .95);
+  transition-duration: 0.3s;
 }
 
 a.increase {
+  color: inherit;
   position: relative;
   transition: color 0.3s cubic-bezier(.47, 0, .2, .95);
 }
@@ -154,7 +168,7 @@ footer {
   margin-top: 30px;
   font-size: 12pt;
   text-align: center;
-  background-color: #43565e;
+  background-color: #729090;
   color: black;
   padding: 18px;
   width: 100%;
@@ -212,7 +226,7 @@ details[open] summary {
 }
 
 .icons:hover {
-  filter: invert(calc(50/255));
+  filter: invert(calc(40/255));
   transition: filter 0.2s ease;
 }
 
@@ -354,7 +368,7 @@ button.cursorpointer {
 .subnav button.cursorpointer,
 .subnavmenus {
   background-color: #207777;
-  transition: background-color 0.1s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 
@@ -362,7 +376,7 @@ button.cursorpointer {
 .subnavmenu:hover,
 .subnav button.cursorpointer:focus,
 .subnavmenu:focus {
-  background-color: #207b89;
+  background-color: #208b89;
   transition: background-color 0.2s ease-out;
 }
 
@@ -375,7 +389,7 @@ button.cursorpointer {
 .subnav-content {
   position: absolute;
   left: 0;
-  background-color: #207777;
+  background-color: #208b89;
   height: var(--navbar-height);
   display: block;
 }
@@ -515,6 +529,10 @@ button.cursorpointer {
   }
 }
 
+.contact {
+  color: inherit; 
+}
+
 @media only screen and (prefers-color-scheme: dark) {
   .headers {
     color: #52a6a9;
@@ -529,11 +547,11 @@ button.cursorpointer {
     color: black;
   }
 
-  a {
+  a.increase {
     color: #5a9fbe;
   }
 
-  a:hover {
+  a.increase:hover {
     color: #4a68c0;
   }
 
