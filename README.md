@@ -5,4 +5,4 @@ All the HTML, CSS and assets are here. For my other projects websites, see the `
 
 Feel free to use my website template as yours as long as you credit me.
 
-**Copyright &copy; 2023 anic17 Software**
+**Copyright &copy; 2024 anic17 Software**
