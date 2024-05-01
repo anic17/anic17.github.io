@@ -13,15 +13,15 @@ html {
   src: url("fonts/ZenMaruGothic-Medium.ttf");
 }
 
-@font-face {
-  font-family: "Raleway";
-  src: url("fonts/Raleway-SemiBold.ttf");
-}
-
 /* Font Awesome font */
 @font-face {
   font-family: "FontAwesome";
   src: url("fonts/fontawesome-webfont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("fonts/RethinkSans-SemiBold.ttf") format("truetype");
 }
 
 .fa {
