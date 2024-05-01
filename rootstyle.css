@@ -1,34 +1,49 @@
 .projbox {
 	visibility: hidden;
 	position: absolute;
+	/* Change from fixed to absolute */
 	opacity: 0;
 	transition: all 0.4s ease-out;
+	z-index: -1;
 }
 
-.batchlang:hover,
-.clang:hover,
-.webdevlang:hover {
+.languages {
+	transition: all 0.4s ease;
+	padding-bottom: 0px;
+	width: 122px;
+	z-index: 0;
+	position: relative;
+	/* Ensure the container is positioned relative */
+}
+
+.languages:hover {
 	cursor: pointer;
+	padding-bottom: 14px;
+	transition: all 0.4s ease;
 }
 
-.batchlang:hover .projbox,
-.clang:hover .projbox,
-.webdevlang:hover .projbox {
+.languages:hover .projbox,
+.projbox:hover {
 	visibility: visible;
 	opacity: 1;
 	margin-top: 24px;
-	transition: all 0.4s ease;
+	transform: translate(50px, -13pt);
+	transition: all 0.4s ease-in-out;
+	z-index: 10;
+	/* Increase z-index to ensure the flashcard is above other elements */
 }
 
 .projbox {
 	display: table;
-	background-color:#338d89;
-	width: 200px;
-	height: 85px;
+	background-color: #43a199;
+	width: 240px;
+	min-height: 70px;
+	max-height: 150px;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 2px;
 	color: #1b232a;
-	border: solid #207777 1px;
+	border: solid #43a199 2px;
+	box-shadow: 3px 3px 20px #207777;
 	box-sizing: border-box;
 	-webkit-user-select: text;
 	-moz-user-select: text;
@@ -37,23 +52,35 @@
 	user-select: text;
 	cursor: auto;
 	overflow: auto;
-	line-height: 110%;
+	line-height: 145%;
+	font-family: "Zen Maru Gothic";
+	margin-top: 6px;
+	margin-bottom: 20px;
+	margin-left: 70px;
+	position: absolute;
+	z-index: 0;
+}
+
+.projbox:hover {
+	z-index: 10;
 }
 
 .projbox li {
 	text-align: left;
+	color: #e6eaff;
 }
 
 .projboxlink {
-	color: #203045;
+	color: #e6eaff !important;
 }
 
 .projboxlink:hover {
-	color: #30547a !important;
+	color: #98c0ff !important;
 }
 
 .proglangcont {
 	width: max-content;
+	line-height: 2;
 }
 
 .batchlang:hover,
@@ -64,11 +91,99 @@
 
 .projboxtitle {
 	font-weight: bold;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	font-size: 12pt;
+	font-family: "Rethink Sans", "Open Sans", "Roboto", Verdana, Arial, serif;
+
 }
+
+.projects-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+
+	margin-top: 1em;
+	margin-bottom: 3em;
+}
+
+.projects-table th,
+.projects-table td {
+	margin: auto;
+	width: 100vw;
+	padding: 8px;
+
+}
+
+.projects-table td {
+	padding-bottom: 4px;
+	height: 60px;
+	padding-top: 0;
+}
+
+.projtabletext {
+	text-align: center;
+	font-family: "Rethink Sans";
+	font-size: 140%;
+	margin-bottom: -20px;
+	cursor: pointer;
+}
+
+
+
+.projtabledesc {
+	font-size: 12pt;
+	opacity:0;
+	max-height: 0px;
+	transition: max-height 0.5s ease-out, opacity 0.4s ease-out; /* Add transition for smooth animation */
+
+}
+
+.projtabletext:hover .projtabledesc {
+	max-height: 999px;
+	opacity: 1;
+	transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
+}
+
+
+hr.projtablehr {
+	width: 65%;
+	height: 6px;
+	border-radius: 20px;
+	background-color: #207777;
+	color: #207777;
+	margin-left: 17.5%;
+
+}
+
+.othercreations {
+	margin-top: 50px;
+}
+
+.aligntop {
+	vertical-align: top;
+}
+
 
 @media only screen and (prefers-color-scheme: dark) {
 	.projbox {
-		background-color:#3e9b99;
+		background-color: #5dc4bc;
 		color: #1b1420;
+		border: solid #5dc4bc 2px;
+	}
+
+	.projbox li {
+		color: #172126;
+	}
+
+	.projboxlink {
+		color: #203045 !important;
+	}
+
+	.projboxlink:hover {
+		color: #2a527f !important;
 	}
 }

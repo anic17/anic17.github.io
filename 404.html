@@ -1,29 +1,38 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/resources/favicon.ico" type="image/x-icon" />
+    <title>404 - Page not found</title>
 
-<head>
-  <title>404 - Page not found</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400&family=Zen+Maru+Gothic:wght@400;500;700&&family=Noto+Sans:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="/style.css"/>
-  <!-- Google Analytics -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT5LM18KB9"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="stylesheet" href="/style.css" />
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XT5LM18KB9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-XT5LM18KB9');
-  </script>
-  
-</head>
+      gtag("config", "G-XT5LM18KB9");
+    </script>
+  </head>
+
+  <style>
+    .margin404 {
+      margin-left: 8vw;
+      margin-right: 8vw;
+      margin-top: 6vh;
+    }
+  </style>
 
 <body>
-  <div id="layout">
+  <div id="layout" class="margin404">
     <div id="layout_notimportant">
       <h1 class="headers">
       Error 404 - Page not found
@@ -31,9 +40,7 @@
       <br>
       <hr id="titlehr">
       <br>
-      Seems like this page doesn't exist.
-      <br>
-      Are you looking for <a href="https://anic17.github.io">anic17.github.io</a>?
+      <p style="font-size: 14pt">Perhaps you were looking for <a class="increase" href="https://anic17.github.io">anic17.github.io</a>?</p>
     </div>
   </div>
 </body>

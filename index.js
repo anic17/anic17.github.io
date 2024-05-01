@@ -45,7 +45,7 @@ function loadWebsite() {
     loadContent(div, filename);
   }
 
-  //let r = document.querySelector(':root').style.setProperty('--navbar-height', '70px');
+  let r = document.querySelector(':root').style.setProperty('--navbar-height', '70px');
 
 }
 

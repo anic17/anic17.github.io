@@ -1,6 +1,7 @@
 :root {
-  --navbar-margin: 70px;
+  --navbar-margin: 30px;
   --navbar-height: 70px;
+  --navbar-border: 28px;
 }
 
 html {
@@ -32,9 +33,7 @@ html {
   -moz-osx-font-smoothing: grayscale
 }
 
-.fa-caret-down:before {
-  content: "\f0d7"
-}
+@import url("font-awesome.min.css");
 
 
 body {
@@ -42,14 +41,13 @@ body {
   height: auto;
   margin: 0;
   color: #1b3336;
-  background-color: #d9ecff;
+  background-color: #d8e7fd;
   font-family: "Zen Maru Gothic", "Microsoft JhengHei", Helvetica, Arial;
 }
 
 code {
   font-family: "Inconsolata", "Consolas", monospace;
   font-weight: 400;
-  font-size: 12pt;
   margin-top: 2px;
   margin-bottom: 2px;
 }
@@ -63,20 +61,29 @@ code {
 
 .headers,
 #sec_headers {
-  font-family: "Raleway", "Open Sans", "Roboto", Verdana, Arial, serif;
+  font-family: "Rethink Sans", "Open Sans", "Roboto", Verdana, Arial, serif;
   line-height: 100%;
   color: #458a8d;
-
 }
 
 
 
-#sec_headers {
-  font-family: "Raleway", "Open Sans", "Roboto", Verdana, Arial, serif;
+.headers {
+  font-size: 200%;
+}
+
+h2#sec_headers {
   font-weight: normal;
   margin-left: 10px;
-  padding-top: 5px;
+  padding-top: 24px;
   padding-bottom: 5px;
+  font-size: 180%;
+}
+
+h3#sec_headers {
+  font-size: 140%;
+  padding-top:20px;
+  padding-bottom: 12px;
 }
 
 
@@ -84,17 +91,17 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(100vh - var(--navbar-height) - var(--navbar-margin));
-  /* 120px comes from the navbar: 70px height + 50px margin */
-  font-size: 12pt;
+  min-height: calc(100vh - var(--navbar-margin) - var(--navbar-height) - var(--navbar-border)); /* 28px from the border bottom */
+  /* 148px comes from the navbar: 70px height + 50px margin + 28px border bottom*/
+  font-size: 12.5pt;
   font-weight: 500;
-  line-height: 140%;
+  line-height: 155%;
 
 }
 
 #layout_notimportant {
-  margin-left: 12vw;
-  margin-right: 12vw;
+  padding-left:  18vw;
+  padding-right: 18vw;
   margin-top: 6vh;
 }
 
@@ -107,21 +114,17 @@ a, a:active {
   color: inherit;
 }
 
-.headers {
-  font-size: 100%;
+.headers a{
+  font-size: 120%;
   transition-property: font-size;
   transition-timing-function: cubic-bezier(.47, 0, .2, .95);
   transition-duration: 0.3s;
 }
 
 
-.headers {
-  font-size: 120%;
-}
+.headers a:hover {
 
-a.headers:hover {
-
-  font-size: 121%;
+  font-size: 125%;
   transition-property: font-size;
   transition-timing-function: cubic-bezier(.47, 0, .2, .95);
   transition-duration: 0.3s;
@@ -170,24 +173,37 @@ footer {
   text-align: center;
   background-color: #729090;
   color: black;
-  padding: 18px;
+  padding: 22px;
   width: 100%;
 }
 
 
 hr {
   width: 60%;
-  height: 1px;
+  margin:auto;
+  height: 2.5px;
+  color: #a5a5a5;
+  background-color: #a5a5a5;
+  border:none;
+  border-radius: 1px;
 }
+
 
 hr#titlehr {
 
   width: 100%;
-  color: #858585;
-  background-color: #858585;
-  height: 3px;
-  border-radius: 10px;
+  color: #959595;
+  background-color: #959595;
+  height: 5px;
+  border-radius: 2.5px;
   border: none;
+  transition: background-color 0.2s ease-out;
+}
+
+hr#titlehr:hover {
+  background-color: #a5a5a5;
+  color: #a5a5a5;
+  transition: background-color 0.2s ease-out;
 }
 
 #list,
@@ -195,12 +211,17 @@ li {
   margin-left: 30px;
 }
 
+li.secondlevel {
+  margin-left: 50px;
+}
+
 li.code {
   margin-bottom: 10px;
 }
 
 .description {
-  margin-left: 15px;
+  margin-left: 18px;
+  margin-right: 18px;
   text-justify: auto;
   text-align: justify;
 }
@@ -306,9 +327,13 @@ details[open] summary {
   background-color: #207777;
   box-sizing: border-box;
   height: auto;
-  margin-bottom: var(--navbar-height);
+  margin-bottom: var(--navbar-margin);
   width: 100%;
+  border-bottom: var(--navbar-border) solid;
+  border-image: linear-gradient(#C1FFFD, #D8E7FD) 60;
 }
+
+
 
 .subnav {
   float: left;
@@ -333,7 +358,7 @@ details[open] summary {
 }
 
 
-.subnav button.subnavhover,
+button.subnavhover,
 .subnav a {
   width: 10vw;
   font-size: inherit;
@@ -348,10 +373,10 @@ details[open] summary {
 
 
 
-button.cursorpointer {
+button.cursorpointer, button.subnavhover {
+
   width: 10vw;
   font-size: inherit;
-  border: none;
   outline: none;
   color: white;
   background-color: #207777;
@@ -359,26 +384,43 @@ button.cursorpointer {
   text-align: center;
   height: var(--navbar-height);
   vertical-align: top;
+  border: none;
 }
 
 .cursorpointer {
   cursor: pointer;
 }
 
-.subnav button.cursorpointer,
-.subnavmenus {
-  background-color: #207777;
-  transition: background-color 0.2s ease-out;
+.subnavhover+.subnav-content {
+  visibility: hidden;
+  opacity: 0%;
+  transition: all 0.15s;
+}
+
+.subnavhover:hover+.subnav-content,
+.subnav-content:hover {
+  visibility: visible;
+  opacity: 100%;
+  transition: opacity 0.3s;
 }
 
 
 .subnav button.cursorpointer:hover,
 .subnavmenu:hover,
 .subnav button.cursorpointer:focus,
-.subnavmenu:focus {
+ .subnavhover:focus, .subnavhover:hover {
   background-color: #208b89;
+  /* */
   transition: background-color 0.2s ease-out;
+  
 }
+
+.subnav button.cursorpointer,
+.subnavmenus, .subnavmenu {
+  background-color: #207777;
+  transition: background-color 0.3s ease-out;
+}
+
 
 .subnav-content a {
   float: left;
@@ -394,19 +436,12 @@ button.cursorpointer {
   display: block;
 }
 
+.subnav-content a {
+  border-top: 2px solid #c1fffd;
 
-.subnavhover+.subnav-content {
-  visibility: hidden;
-  opacity: 0%;
-  transition: all 0.15s;
 }
 
-.subnavhover:hover+.subnav-content,
-.subnav-content:hover {
-  visibility: visible;
-  opacity: 100%;
-  transition: opacity 0.3s;
-}
+
 
 /* Colored text selection */
 ::selection {
@@ -478,6 +513,9 @@ button.cursorpointer {
   #navbar {
     visibility: hidden;
     display: none;
+    --navbar-margin: 120px;
+    --navbar-height: 0px;
+
   }
 }
 
@@ -494,12 +532,17 @@ button.cursorpointer {
     transition: width 0.35s ease-out;
   }
 
+
+}
+
+@media only screen and (min-width: 2304px)
+{
   #navbara {
-    width: 153.6px;
+    width: 230.4px;
   }
 
-  .subnav button.subnavhover {
-    width: 153.6px;
+  .subnav button.subnavhover, .subnav a {
+    width: 230.4px;
   }
 }
 
@@ -570,11 +613,23 @@ button.cursorpointer {
     background-color: #27302e;
   }
 
+  hr#titlehr:hover {
+    color: #37403e;
+    background-color: #37403e;
+  }
+
   ::selection {
-    background-color: #20504d;
+    background-color: #20524d;
   }
 
   ::-moz-selection {
-    background-color: #20504d;
+    background-color: #20524d;
+  }
+  #navbar {
+    border-image: linear-gradient(#1B3D42, #172126) 60;
+  }
+  .subnav-content a {
+    border-top: 2px solid #1B4346;
+  
   }
 }
