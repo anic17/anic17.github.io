@@ -106,8 +106,12 @@
 	justify-content: center;
 	align-self: center;
 
-	margin-top: 1em;
+	margin-top: 3em;
 	margin-bottom: 3em;
+}
+
+table {
+	display: block;
 }
 
 .projects-table th,
@@ -122,6 +126,11 @@
 	padding-bottom: 4px;
 	height: 60px;
 	padding-top: 0;
+}
+
+.projects-table td.hrcont {
+	height: 30px;
+	padding-top: 24px;
 }
 
 .projtabletext {

@@ -67,6 +67,10 @@ code {
 }
 
 
+.headers a:visited {
+  text-decoration: none;
+  color: inherit;
+}
 
 .headers {
   font-size: 200%;
@@ -190,7 +194,7 @@ hr {
 
 
 hr#titlehr {
-
+  margin-top: 1em;
   width: 100%;
   color: #959595;
   background-color: #959595;
