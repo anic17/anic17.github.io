@@ -191,7 +191,7 @@ footer {
 hr {
   width: 60%;
   margin:auto;
-  height: 2.5px;
+  height: 1px;
   color: #a5a5a5;
   background-color: #a5a5a5;
   border:none;
@@ -263,6 +263,12 @@ details[open] summary {
 
 .badges {
   padding: 10px 0 5px;
+}
+
+
+.note::before {
+  content: "Note: ";
+  font-weight: bold;
 }
 
 /* Begins the navigation bar */
