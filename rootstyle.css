@@ -78,7 +78,7 @@
 	color: #98c0ff !important;
 }
 
-.proglangcont {
+.language-list {
 	width: max-content;
 	line-height: 2;
 }
@@ -98,56 +98,67 @@
 
 }
 
+/* table, th, td {
+	border: 1px solid #00ffff;
+} */
+
 .projects-table {
-	width: 100%;
+	display: table;
+	margin: auto;
 	border-collapse: collapse;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
 	align-self: center;
-
 	margin-top: 3em;
 	margin-bottom: 3em;
 }
 
-table {
-	display: block;
-}
 
 .projects-table th,
 .projects-table td {
-	margin: auto;
-	width: 100vw;
-	padding: 8px;
+	padding-top: 8px 0 8px 0;
+	margin-left: 8px;
+	margin-right: 8px;
+	
 
 }
 
 .projects-table td {
+	width: 16vw;
 	padding-bottom: 4px;
 	height: 60px;
 	padding-top: 0;
+	margin: 0 26px 0 2	6px;
 }
 
 .projects-table td.hrcont {
 	height: 30px;
-	padding-top: 24px;
 }
+hr.projtablehr {
+	width: 70%;
+	height: 6px;
+	border-radius: 20px;
+	background-color: #207777;
+	color: #207777;
+	margin: auto;
+
+}
+
 
 .projtabletext {
 	text-align: center;
 	font-family: "Rethink Sans";
 	font-size: 140%;
-	margin-bottom: -20px;
 	cursor: pointer;
 }
 
-
-
 .projtabledesc {
 	font-size: 12pt;
-	opacity:0;
+	opacity: 0;
 	max-height: 0px;
-	transition: max-height 0.5s ease-out, opacity 0.4s ease-out; /* Add transition for smooth animation */
+	transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
+	/* Add transition for smooth animation */
 
 }
 
@@ -158,15 +169,7 @@ table {
 }
 
 
-hr.projtablehr {
-	width: 65%;
-	height: 6px;
-	border-radius: 20px;
-	background-color: #207777;
-	color: #207777;
-	margin-left: 17.5%;
 
-}
 
 .othercreations {
 	margin-top: 50px;
@@ -175,6 +178,44 @@ hr.projtablehr {
 .aligntop {
 	vertical-align: top;
 }
+
+
+
+
+
+
+
+
+/* 
+
+DEBUG CROSSHAIRS FOR CENTERING
+
+
+hr.DEBUG {
+	transform: rotate(90deg);
+	width: 100vw;
+	height: 1px;
+
+	color: #ff0000;
+	background-color: #ff0000;
+	position: absolute;
+	padding: auto;
+	z-index: 100;
+}
+
+hr.DEBUG2 {
+	transform: translateY(calc(50vh - 1px));
+	width: 100vw;
+
+	height: 1px;
+
+	color: #ff0000;
+	background-color: #ff0000;
+	position: absolute;
+	padding: auto;
+	z-index: 100;
+}
+ */
 
 
 @media only screen and (prefers-color-scheme: dark) {

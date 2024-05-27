@@ -2,6 +2,7 @@
   --navbar-margin: 30px;
   --navbar-height: 70px;
   --navbar-border: 28px;
+  --footer-border: 28px;
 }
 
 html {
@@ -135,17 +136,17 @@ a, a:active {
 }
 
 a.increase {
-  color: inherit;
+  color: #1a61a9;
   position: relative;
   transition: color 0.3s cubic-bezier(.47, 0, .2, .95);
 }
 
-a.increase:hover {
+a.increase:hover, .projtabledesc + a.increase:hover {
   color: #2a78c8;
   transition: color 0.3s cubic-bezier(.47, 0, .2, .95);
 }
 
-a.increase:after {
+a.increase:after,.projtabledesc +  a.increase:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -247,12 +248,12 @@ details[open] summary {
 .icons {
   padding: 3px;
   filter: invert(calc(10/255));
-  transition: filter 0.1s ease;
+  transition: filter 0.3s ease-out;
 }
 
 .icons:hover {
   filter: invert(calc(40/255));
-  transition: filter 0.2s ease;
+  transition: filter 0.3s ease-out;
 }
 
 .badges {
@@ -275,7 +276,7 @@ details[open] summary {
 .navbar_cross .line1,
 .navbar_cross .line2 {
   background-color: #52a6a9;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease-out;
 }
 
 .navbar_menu:hover .navbar_menu_line,
@@ -301,7 +302,7 @@ details[open] summary {
   width: 35px;
   height: 4px;
   background-color: #aaaaad;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease-out;
 }
 
 
@@ -446,14 +447,9 @@ button.cursorpointer, button.subnavhover {
 }
 
 
-
 /* Colored text selection */
-::selection {
-  background-color: #20c0ba;
-}
-
-::-moz-selection {
-  background-color: #20c0ba;
+::selection, ::-moz-selection {
+  background-color: #20b0aa;
 }
 
 /* Ends the navigation bar */
@@ -477,11 +473,9 @@ button.cursorpointer, button.subnavhover {
 
 @media only screen and (max-width: 992px) {
 
-  #navbara,
-  .subnav .subnavbtn,
-  .subnav button.subnavhover,
-  button.cursorpointer {
-    width: 99.2px;
+  .subnav a, .subnavmenu .subnavhover,
+  button.cursorpointer, .subnav-content a {
+    width: 12.5vw; /* Hacky navbar size to approximately fill all the width, TODO: CHANGE THIS*/
   }
 
   hr {
@@ -525,18 +519,11 @@ button.cursorpointer, button.subnavhover {
 
 /* Set a fixed size for some elements if the viewport is too big */
 @media only screen and (min-width: 1536px) {
-  #layout_notimportant {
-    margin-right: 185px;
-    margin-left: 185px;
-  }
-
-  hr {
+  hr:not(.projtablehr) {
     width: 692px;
     float: left;
     transition: width 0.35s ease-out;
   }
-
-
 }
 
 @media only screen and (min-width: 2304px)
@@ -580,11 +567,41 @@ button.cursorpointer, button.subnavhover {
   color: inherit; 
 }
 
+footer {
+  border-top: var(--footer-border) solid;
+  border-image: linear-gradient(#D8E7FD, #B8E7FD) 60;
+}
+
+.under-construction {
+
+  background-color: #cae7ef;
+  width: 80%;
+  min-height: fit-content;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 30px 15px 30px;
+  text-align: justify;
+  font-size: 14pt;
+  box-shadow: -3px -3px 8px 4px #caeaf4, 3px 3px 8px 4px #caeaf4;
+  border-radius: 4px;
+}
+
+.under-construction::before, .under-construction::after {
+  content: "\1F6A7";
+}
+
+
 @media only screen and (prefers-color-scheme: dark) {
   .headers {
     color: #52a6a9;
   }
+  .under-construction {
+    background-color: #1a373f;
+    box-shadow: -3px -3px 8px 4px #21373f, 3px 3px 8px 4px #21373f;
 
+  }
   footer,
   .navbar_menu_line,
   .navbar_menu .navbar_menu_line,
@@ -605,6 +622,7 @@ button.cursorpointer, button.subnavhover {
   body {
     color: #c0c9c9;
     background-color: #172126;
+  /* background: linear-gradient(45deg, #274247, #312d88); */
   }
 
   hr {
@@ -631,6 +649,9 @@ button.cursorpointer, button.subnavhover {
   }
   #navbar {
     border-image: linear-gradient(#1B3D42, #172126) 60;
+  }
+  footer {
+    border-image: linear-gradient(#172126, #123030) 60;
   }
   .subnav-content a {
     border-top: 2px solid #1B4346;
