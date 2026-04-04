@@ -6,4 +6,4 @@ All the HTML, CSS and assets are here. For my other projects websites, see the `
 If you wish to use this website design for your own webpage, you are allowed to do so as long as you credit me.
 
 
-**Copyright &copy; 2024 anic17 Software**
+**Copyright &copy; 2026 anic17 Software**
