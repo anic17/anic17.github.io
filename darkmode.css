@@ -1,0 +1,14 @@
+body.dark-theme {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+body.dark-theme img, 
+body.dark-theme .fa, 
+body.dark-theme .projbox {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+body.dark-theme {
+    background-color: #000 !important;
+}
+
