@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Simple homepage for any browser, with customizable search engine." />
+  <title>Homepage</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Begins the settings part -->
+    <div id="settings" onclick="showSettings(event)" title="Open the settings">
+      <div class="menuline"></div>
+      <div class="menuline"></div>
+      <div class="menuline"></div>
+    </div>
+    <div id="settings_open" onclick="showSettings(event)" title="Close the settings">
+      <div class="line1"></div>
+      <div class="line2"></div>
+    </div>
+    <div class="settings_menu">
+      <div class="settings_text">
+        <h1 class="settings_header_div">Settings</h1>
+        <br />
+        <hr class="settings_hr" />
+        <br />
+        <h2 class="settings_header">Search engine</h2>
+
+        <select id="settings_engine" title="Choose the search engine">
+          <option value="Bing" title="Bing">Bing</option>
+          <option value="Brave" title="Brave">Brave</option>
+          <option value="DuckDuckGo" title="DuckDuckGo">DuckDuckGo</option>
+          <option value="Ecosia" title="Ecosia">Ecosia</option>
+          <option value="Google" title="Google">Google</option>
+          <option value="Qwant" title="Qwant">Qwant</option>
+          <option value="Wikipedia" title="Wikipedia">Wikipedia</option>
+          <option value="Yahoo" title="Yahoo">Yahoo</option>
+        </select>
+        <br />
+        <br />
+        <hr class="settings_hr" />
+        <br />
+
+        <h2 class="settings_header">Quick links</h2>
+        <!-- Checkboxes for quick links -->
+        <!-- All the checkboxes are aligned to the left to maintain a consistent look -->
+
+        <div id="checkboxes">
+          <table class="checkboxes_table">
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="github" checked />
+              </td>
+              <td><label for="github" title="GitHub">GitHub</label></td>
+            </tr>
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="youtube" checked />
+              </td>
+              <td><label for="youtube" title="YouTube">YouTube</label></td>
+            </tr>
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="reddit" checked />
+              </td>
+              <td><label for="reddit" title="Reddit">Reddit</label></td>
+            </tr>
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="stackoverflow" checked />
+              </td>
+              <td>
+                <label for="stackoverflow" title="Stack Overflow">Stack Overflow</label>
+              </td>
+            </tr>
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="twitch" checked />
+              </td>
+              <td><label for="twitch" title="Twitch">Twitch</label></td>
+            </tr>
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="chatgpt" checked />
+              </td>
+              <td><label for="chatgpt" title="ChatGPT">ChatGPT</label></td>
+            </tr>
+            <tr>
+              <td class="checkboxes_td">
+                <input type="checkbox" id="wikipedia" checked />
+              </td>
+              <td>
+                <label for="wikipedia" title="Wikipedia">Wikipedia</label>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <br />
+        <br />
+
+        <button id="apply" onclick="applySettings()" title="Apply the new settings">
+          Apply
+        </button>
+        <br />
+        <br />
+        <hr class="settings_hr" />
+        <br />
+        <button id="reset" onclick="resetSettings()" title="Reset settings to default">
+          Reset settings
+        </button>
+        <br />
+        <br />
+        <div id="status"></div>
+      </div>
+      <br />
+    </div>
+    <!-- Ends the settings part -->
+
+    <!-- Begins the start page -->
+    <div class="mainscreen">
+      <noscript class="text headers">
+        <h1>This page requires JavaScript to work</h1>
+        <br />
+        <br />
+      </noscript>
+
+      <h1 class="headers">Homepage</h1>
+
+      <input id="searchbar" type="text" placeholder="Search with DuckDuckGo" title="Search the web" autofocus
+        onkeydown="searchWeb(event)" />
+
+      <div class="icons">
+        <a href="https://github.com" class="github"><img width="30" height="30" src="assets/icons/github.svg"
+            title="GitHub" /></a><a href="https://youtube.com" class="youtube"><img width="30" height="30"
+            src="assets/icons/youtube.svg" title="YouTube" /></a><a href="https://reddit.com" class="reddit"><img
+            width="30" height="30" src="assets/icons/reddit.svg" title="Reddit" /></a><a
+          href="https://stackoverflow.com" class="stackoverflow"><img width="30" height="30"
+            src="assets/icons/stack-overflow.svg" title="Stack Overflow" /></a><a href="https://twitch.tv"
+          class="twitch"><img width="30" height="30" src="assets/icons/twitch.svg" title="Twitch" /></a><a
+          href="https://chatgpt.com" class="chatgpt"><img width="30" height="30" src="assets/icons/chatgpt.svg"
+            title="ChatGPT" /></a><a href="https://wikipedia.org" class="wikipedia"><img width="30" height="30"
+            src="assets/icons/wikipedia.svg" title="Wikipedia" /></a>
+      </div>
+      <hr id="hrfocus" />
+
+      <br />
+    </div>
+    <footer class="text">
+      Made by
+      <a class="hoverlink" href="https://github.com/anic17">anic17</a>.
+      <a class="hoverlink" href="https://github.com/anic17/homepage">View source</a>.<br />
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

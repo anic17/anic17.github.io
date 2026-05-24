@@ -1,0 +1,38 @@
+.syntax_datatype {
+	color: indianred;
+}
+
+.syntax_struct {
+	color: limegreen;
+}
+
+.syntax_func {
+	color: lightblue;
+}
+
+.syntax_include {
+	color: darksalmon;
+}
+
+.syntax_quotes {
+	color: gold;
+}
+
+@media only screen and (prefers-color-scheme: light)
+{
+	.syntax_datatype {
+		color: firebrick;
+	}
+	.syntax_struct {
+		color: green;
+	}
+	.syntax_func {
+		color: dodgerblue;
+	}
+	.syntax_include {
+		color: crimson;
+	}
+	.syntax_quotes {
+		color: orange;
+	}
+}

@@ -1,0 +1,427 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%
+}
+
+body {
+	background-image: radial-gradient(#dbdbde, #dbdbe6, #dbdbde);
+}
+
+footer {
+	margin-right: 10px;
+	text-align: right;
+	margin-bottom: 10px;
+	font-size: 10pt;
+}
+
+
+hr {
+	background-color: #959595;
+	border: none;
+}
+
+#hrfocus {
+	margin: auto;
+	width: 25vw;
+	align-self: center;
+	border-radius: 2px;
+	height: 3px;
+}
+
+.layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	font-size: 12pt;
+	font-weight: normal;
+	line-height: 140%;
+	font-family: "Source Sans Pro", "Open Sans", Verdana, Arial, sans-serif;
+}
+
+.mainscreen {
+	width: 60vw;
+	margin: 30vh auto 0 auto;
+	text-align: center;
+}
+
+.text {
+	color: #222226;
+}
+
+#searchbar {
+	box-sizing: border-box;
+	border: none;
+	width: 20vw;
+	height: 45px;
+	border-radius: 8px;
+	text-align: center;
+	font-size: 11pt;
+	outline: none;
+	background-color: #c2c2cb;
+	color: #121216;
+	transition: background-color 0.1s ease-in-out;
+}
+
+#searchbar:focus,
+input[type="text"]#searchbar:hover {
+	background-color: #cacad0;
+	transition: background-color 0.1s ease;
+}
+
+
+
+#searchbar:focus::placeholder {
+	color: transparent;
+}
+
+#hrfocus {
+	background-color: #959595;
+	transition: background-color 0.1s ease-in-out;
+}
+
+#searchbar:focus~div~#hrfocus {
+	background-color: #a9a9c2;
+	transition: background-color 0.1s ease-in-out;
+}
+
+.headers {
+	color: #222226;
+	font-family: "Open Sans", "Noto Sans", "Source Sans Pro", Verdana, Arial, sans-serif;
+	font-weight: 500;
+	padding-bottom: 60px;
+}
+
+.hoverlink {
+	color: unset;
+	text-decoration: none;
+}
+
+.hoverlink:hover {
+	text-decoration-line: underline;
+}
+
+.hoverlink:active {
+	color: #222226;
+}
+
+#settings {
+	margin: 6px 10px 10px 10px;
+	box-sizing: border-box;
+	width: 30px;
+	position: absolute;
+	z-index: 2;
+	display: block;
+}
+
+
+#settings:hover,
+#settings_open:hover {
+	cursor: pointer;
+}
+
+.settings_menu {
+	position: absolute;
+	padding-top: 40px;
+	width: 15vw;
+	min-height: 100%;
+	background-color: rgba(95, 95, 108, 0.2);
+	color: #222226;
+	z-index: 1;
+	transition: opacity 1s ease;
+	visibility: hidden;
+	transform: translateX(-15vw);
+	backdrop-filter: blur(3px);
+}
+
+.menuline {
+	box-sizing: border-box;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	width: 35px;
+	height: 4px;
+	border-radius: 5px;
+	background-color: #9a9a9d;
+	transition: background-color 0.2s ease;
+}
+
+#settings_open {
+	display: none;
+	margin: 6px 10px 10px 10px;
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 2;
+	display: none;
+}
+
+.line1 {
+	margin-bottom: 20px;
+	transform: translateY(12px) rotate(45deg);
+}
+
+.line2 {
+	transform: translateY(-12px) rotate(-45deg);
+}
+
+.line1,
+.line2 {
+	width: 35px;
+	height: 4px;
+	background-color: #8c8c92;
+	transition: background-color 0.2s ease;
+}
+
+
+
+
+hr.settings_hr {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
+.settings_header_div {
+	font-weight: 500;
+	font-size: 24pt;
+}
+
+.settings_header {
+	font-weight: 400;
+	font-size: 14pt;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.settings_text {
+	margin-top: 25px;
+	text-align: center;
+	align-items: center;
+	font-family: Open Sans;
+	font-weight: lighter;
+}
+
+button#apply,
+button#reset,
+select {
+	width: 100px;
+	height: 32px;
+	background-color: #dbdbeb;
+	color: inherit;
+	border-color: #b2b2c2;
+	border-width: 1px;
+	border-radius: 5px;
+	box-shadow: none;
+}
+
+
+select,
+option {
+	vertical-align: middle;
+
+	border: none;
+	font-weight: 500;
+	margin-top: auto;
+	margin-bottom: auto;
+	text-align: center;
+}
+
+.icons {
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.icons a {
+	text-decoration: none;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.icons a img {
+	filter: invert(calc(50/255));
+	transition: filter 0.2s ease-in-out;
+}
+
+.icons a img:hover {
+	filter: invert(calc(120/255));
+	transition: filter 0.2s ease-in-out;
+}
+
+#settings_applied {
+	margin-top: 10px;
+	font-size: 11pt;
+	color: #49494e;
+}
+
+noscript {
+	color: inherit;
+}
+
+.checkboxes_table {
+	width: 100%;
+	margin-right: 20px;
+	border-collapse: collapse;
+}
+
+td.checkboxes_td {
+	text-align: right;
+	padding: 2px 5px 2px 5px;
+	/* Optional: add some space between checkbox and label */
+}
+
+td+td {
+	text-align: left;
+	padding-left: 5px;
+}
+
+input[type="checkbox"] {
+	accent-color: rgb(7, 84, 93);
+}
+
+
+::selection {
+	background-color: #7e95a5;
+	color: #e2e2e6;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+	.mainscreen {
+		width: 80vw;
+		margin-left: 10vw;
+		margin-right: 10vw;
+	}
+}
+
+
+@media only screen and (max-width: 864px) {
+	hr#hrfocus {
+		width: 216px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	hr#hrfocus {
+		width: 60vw;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	#searchbar {
+		width: 198.4px;
+	}
+
+	 {
+		width: 148.8px;
+	}
+}
+
+@media only screen and (min-width: 1536px) {
+	.settings_menu {
+		width: 230.4px;
+	}
+}
+
+@media only screen and (max-height: 320px)
+/* For extremely low resolutions */
+	{
+	.mainscreen {
+		margin-top: 96px;
+	}
+
+}
+
+
+/* Themes */
+@media only screen and (prefers-color-scheme: dark) {
+
+	button#apply,
+	button#reset,
+	select {
+		background-color: #56565b;
+		color: inherit;
+		border-color: #626268;
+	}
+
+	.settings_menu {
+
+		background-color: rgba(160, 160, 174, 0.2);
+		color: #d4d4d7;
+	}
+
+	#settings_applied {
+		color: #d4d4d7;
+	}
+
+	.showmenu {
+		color: #9f9fa4;
+	}
+
+	.menuline {
+		background-color: #80808b;
+	}
+
+	#settings:hover .menuline,
+	#settings_open:hover div {
+		background-color: #d4d4d7;
+	}
+
+	body {
+		background-image: radial-gradient(#1d1d22, #1d1d29, #1d1d22);
+	}
+
+	hr,
+	#hrfocus {
+		background-color: #656565;
+	}
+
+	#searchbar:focus~div~#hrfocus {
+		background-color: #9f9fa0;
+	}
+
+	.text {
+		color: #dfdfe3;
+	}
+
+	#searchbar {
+		background-color: #29292d;
+		color: #efeff3;
+	}
+
+	#searchbar:focus,
+	input[type="text"]#searchbar:hover {
+		background-color: #353539;
+	}
+
+	input[type="checkbox"] {
+		accent-color: rgb(64, 92, 145);
+	}
+
+
+	.headers {
+		color: #b3b3b3;
+	}
+
+	.icons a img {
+		filter: invert(calc(140/255));
+	}
+
+	.icons a img:hover {
+		filter: invert(calc(220/255));
+	}
+
+	::selection {
+		background-color: #5e7585;
+		color: #e2e2e6;
+	}
+
+}
