@@ -32,11 +32,12 @@ html {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 "FontAwesome";
+  font: normal normal normal 18px/1 "FontAwesome";
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 5px;
 }
 
 @import url("font-awesome.min.css");
@@ -79,7 +80,7 @@ code {
 }
 
 .headers {
-  font-size: 200%;
+  font-size: 210%;
 }
 
 h2#sec_headers {
@@ -215,6 +216,8 @@ hr#titlehr:hover {
   color: #a5a5a5;
   transition: background-color 0.2s ease-out;
 }
+
+
 
 #list,
 li {
@@ -366,7 +369,7 @@ details[open] summary {
 
   float: inherit;
 
-  width: 10vw;
+  width: 12.5vw;
   font-size: inherit;
   color: white;
 
@@ -376,7 +379,7 @@ details[open] summary {
 
 button.subnavhover,
 .subnav a {
-  width: 10vw;
+  width: 12.5vw;
   font-size: inherit;
   border: none;
   outline: none;
@@ -391,7 +394,7 @@ button.subnavhover,
 
 button.cursorpointer, button.subnavhover {
 
-  width: 10vw;
+  width: 12.5vw;
   font-size: inherit;
   outline: none;
   color: white;
@@ -447,7 +450,7 @@ button.cursorpointer, button.subnavhover {
 .subnav-content {
   position: absolute;
   left: 0;
-  background-color: #208b89;
+  background-color: #207777;
   height: var(--navbar-height);
   display: block;
 }
@@ -486,7 +489,7 @@ button.cursorpointer, button.subnavhover {
 
   .subnav a, .subnavmenu .subnavhover,
   button.cursorpointer, .subnav-content a {
-    width: 12.5vw; /* Hacky navbar size to approximately fill all the width, TODO: CHANGE THIS*/
+    width: 16.6vw; /* size to approximately fill all the width, TODO: CHANGE THIS*/
   }
 
   hr {
@@ -494,7 +497,7 @@ button.cursorpointer, button.subnavhover {
   }
 
   #layout {
-    line-height: 145%;
+    line-height: 165%;
   }
 
   #list,
@@ -632,8 +635,8 @@ footer {
 
   body {
     color: #c0c9c9;
-    background-color: #172126;
-  /* background: linear-gradient(45deg, #274247, #312d88); */
+    background-color: #152128;
+    background: radial-gradient(45deg, #274247, #312d88);
   }
 
   hr {
@@ -651,18 +654,15 @@ footer {
     background-color: #37403e;
   }
 
-  ::selection {
-    background-color: #20524d;
+  ::selection, ::-moz-selection {
+    background-color: #255748;
   }
 
-  ::-moz-selection {
-    background-color: #20524d;
-  }
   #navbar {
-    border-image: linear-gradient(#1B3D42, #172126) 60;
+    border-image: linear-gradient(#1B3D42, #152128) 60;
   }
   footer {
-    border-image: linear-gradient(#172126, #123030) 60;
+    border-image: linear-gradient(#152128, #123030) 60;
   }
   .subnav-content a {
     border-top: 2px solid #1B4346;
