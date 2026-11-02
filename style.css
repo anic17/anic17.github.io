@@ -184,7 +184,7 @@ footer {
   text-align: center;
   background-color: #729090;
   color: black;
-  padding: 22px;
+  padding: 24px;
   width: 100%;
 }
 
@@ -256,12 +256,14 @@ details[open] summary {
 .icons {
   padding: 3px;
   filter: invert(calc(10/255));
-  transition: filter 0.3s ease-out;
+  transform: scale(1.0);
+  transition: filter 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .icons:hover {
   filter: invert(calc(40/255));
-  transition: filter 0.3s ease-out;
+  transform: scale(2.1);
+  transition: filter 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .badges {

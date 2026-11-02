@@ -103,40 +103,36 @@
 } */
 
 .projects-table {
-	display: table;
-	margin: auto;
-	border-collapse: collapse;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	align-self: center;
-	margin-top: 3em;
-	margin-bottom: 3em;
+    display: table;
+    margin: auto;
+    /* 1. Change to 'separate' so we can use border-spacing */
+    border-collapse: separate;
+    /* 2. Adjust these values for your gaps. First value is Horizontal gap, second is Vertical gap */
+    border-spacing: 50px 5px; 
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 0em;
 }
-
 
 .projects-table th,
 .projects-table td {
-	padding-top: 8px 0 8px 0;
-	margin-left: 8px;
-	margin-right: 8px;
-	
+    /* 3. Replaced invalid padding-top syntax with standard padding */
+    padding-bottom: 0px; 
 
+    /* (Margins removed because they do not work on table cells) */
 }
 
 .projects-table td {
-	width: 16vw;
-	padding-bottom: 4px;
-	height: 60px;
-	padding-top: 0;
-	margin: 0 26px 0 2	6px;
+    width: 16vw;
+    height: 60px;
+    padding-top: 0;
 }
 
 .projects-table td.hrcont {
-	height: 30px;
+    height: 30px;
 }
 hr.projtablehr {
-	width: 70%;
+	width: 95%;
 	height: 6px;
 	border-radius: 20px;
 	background-color: #207777;
@@ -153,11 +149,18 @@ hr.projtablehr {
 	cursor: pointer;
 }
 
+.projtablesubtext { /* Doesn't seem to do anything? */
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
 .projtabledesc {
 	font-size: 12pt;
 	opacity: 0;
 	max-height: 0px;
 	transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
+	margin-left: 10px;
+	margin-right: 10px;
 	/* Add transition for smooth animation */
 
 }
